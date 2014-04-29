@@ -1,0 +1,4 @@
+*.sublime-workspace
+*.sublime-project
+.sass-cache/
+ORIGINAL-io-2012-slides/

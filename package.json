@@ -1,0 +1,24 @@
+{
+  "name": "Media-Manager-Presentation",
+  "version": "0.1.0",
+  "description": "Tools, Tips, and Tricks for SDL Media Media Manager",
+  "main": "template.html",
+  "assets": {
+    "presentation" : "mypresentation.html",
+    "theme" : "theme",
+    "content" :"content"
+    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Tridion",
+    "Media",
+    "Manager"
+  ],
+  "author": "Frank M. Taylor",
+  "license": "Apache",
+  "devDependencies": {
+    "grunt-md2html": "~0.1.7"
+  }
+}
