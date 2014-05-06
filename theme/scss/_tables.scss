@@ -17,6 +17,9 @@ table {
   tfoot {
     order: 1;
   }
+  caption {
+    order: 9999;
+  }
   tr {
     display: inherit;
     flex-direction: row;
@@ -24,6 +27,9 @@ table {
     align-items: stretch;
     flex-grow: 1;
     td, th {
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;
       flex-basis: 15%;
       flex-grow: 2;
       text-align: left;
@@ -44,6 +50,10 @@ table {
   border-spacing: 2px;
   border-bottom: 1px solid $gray-3;
 
+  caption {
+    font-size: .85em;
+    font-style: italic;
+  }
   tr > td:first-child, th {
     font-weight: 600;
     color: $gray-4;
