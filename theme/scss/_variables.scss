@@ -4,6 +4,11 @@ $brand-small-icon-size: 30px;
 $phi: 1.618;
 $fi: .618;
 
+$pctPhi: 61.8%;
+$pctInvPhi: (100% - $pctPhi);
+$pctSplitPhi: ($pctPhi/2);
+$pctSplitInvPhi: ($pctInvPhi/2);
+
 $gray-1: #e6e6e6;
 $gray-2: #a9a9a9;
 $gray-3: #797979;

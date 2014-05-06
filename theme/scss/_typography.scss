@@ -1,0 +1,91 @@
+b {
+  font-weight: 600;
+}
+
+a {
+  color: $brand-blue-secondary2;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(42, 124, 223, 0.5);
+
+  &:hover {
+    color: black !important;
+  }
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.6175rem;
+  line-height: 1.618;
+  letter-spacing: -.02ex;
+  color: $gray-4;
+}
+
+h3 {
+  font-weight: inherit;
+  color: $gray-3;
+  font-size: 1.25rem;
+  letter-spacing: -.02ex;
+  line-height: $phi;
+}
+h2 + h3 {
+  margin-top: -.618em
+}
+
+ul, dl {
+  margin-left: 1.36em;
+  margin-bottom: .618em;
+  position: relative;
+
+  li {
+    margin-bottom: 0.618em;
+
+    ul {
+      margin-left: 2em;
+      margin-bottom: 0;
+
+      li:before {
+        content: '-';
+        font-weight: 600;
+      }
+    }
+  }
+
+  > li:before {
+    /*content: '\00B7';
+    margin-left: -1em;
+    position: absolute;
+    font-weight: 600;*/
+  }
+
+  ul {
+    margin-top: .618em;
+  }
+}
+
+q {
+  font-size: 45px;
+  line-height: 72px;
+
+  &:before {
+    content: '“';
+    position: absolute;
+    margin-left: -0.5em;
+  }
+  &:after {
+    content: '”';
+    position: absolute;
+    margin-left: 0.1em;
+  }
+}
+
+dl {
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    font-weight: normal;
+  }
+}

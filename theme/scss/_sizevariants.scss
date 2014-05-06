@@ -1,0 +1,64 @@
+/* Size variants */
+dl.smaller, ul.smaller {
+  font-size: .618em;
+  dt, dd, li {
+    font-size: .9em;
+    line-height: 1.25;
+  }
+}
+
+.technical{
+  dt {
+    font-family: monospace;
+  }
+}
+article.small {
+  p, ul, dl {
+    font-size: .8em;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+  table {
+    td, th {
+      font-size: .65em;
+    }
+  }
+  pre {
+    font-size: .65em;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  q {
+    font-size: 40px;
+    line-height: 48px;
+
+    &:before, &:after {
+      font-size: 60px;
+    }
+  }
+}
+article.smaller {
+  p, ul, dl {
+    font-size: .85em;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+  table {
+    td, th {
+      font-size: .56em;
+    }
+  }
+  pre {
+    font-size: .56em;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  q {
+    font-size: 40px;
+    line-height: 48px;
+
+    &:before, &:after {
+      font-size: 60px;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+slides > slide {
+  display: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1rem;
+  color: $gray-3;
+  //@include background(linear-gradient(white, white 85%, $gray-1));
+  //background-color: white;
+  width: $slide-width;
+  height: $slide-height;
+  margin-left: -$slide-width / 2;
+  margin-top: -$slide-height / 2;
+  padding: $slide-top-bottom-padding $slide-left-right-padding;
+
+  @include border-radius($slide-border-radius);
+  //@include box-shadow(5px 5px 20px $gray-4);
+  @include transition(all 0.6s ease-in-out);
+
+  //$translateX: 1020px;
+  //$rotateY: 30deg;
+  //$rotateX: 45deg;
+
+  &.far-past {
+    //display: block;
+    display: none;
+    //@include transform(translate(-$translateX * 2));
+    //@include transform(translate3d(-$translateX * 2, 0, 0));
+  }
+
+  &.past {
+    display: block;
+    //@include transform(translate(-$translateX) rotateY($rotateY) rotateX($rotateX));
+    //@include transform(translate3d(-$translateX, 0, 0) rotateY($rotateY) rotateX($rotateX));
+    opacity: 0;
+  }
+
+  &.current {
+    display: block;
+    //@include transform(translate(0));
+    //@include transform(translate3d(0, 0, 0));
+    opacity: 1;
+
+    .auto-fadein {
+      opacity: 1;
+    }
+
+    .gdbar {
+      @include background-size(100% 100%);
+    }
+  }
+
+  &.next {
+    display: block;
+    //@include transform(translate($translateX) rotateY(-$rotateY) rotateX($rotateX));
+    //@include transform(translate3d($translateX, 0, 0) rotateY(-$rotateY) rotateX($rotateX));
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.far-next {
+    //display: block;
+    display: none;
+    //@include transform(translate($translateX * 2));
+    //@include transform(translate3d($translateX * 2, 0, 0));
+  }
+
+  &.dark {
+    background: $gray-4 !important;
+  }
+
+  &:not(.nobackground) {
+    //background: white url(../../images/google_developers_icon_128.png) ($brand-small-icon-size * 2) 98% no-repeat;
+    //@include background-size($brand-small-icon-size $brand-small-icon-size);
+
+    &:before {
+      font-size: .75rem;
+      content: $social-tags;
+      position: absolute;
+      bottom: $slide-top-bottom-padding / 2;
+      left: $slide-left-right-padding;
+      background: url(../../images/google_developers_icon_128.png) no-repeat 0 50%;
+      @include background-size($brand-small-icon-size $brand-small-icon-size);
+      padding-left: $brand-small-icon-size + 10;
+      height: $brand-small-icon-size;
+      line-height: $phi;
+    }
+    &:after {
+      font-size: .75rem;
+      content: attr(data-slide-num) '/' attr(data-total-slides);
+      position: absolute;
+      bottom: $slide-top-bottom-padding / 2;
+      right: $slide-left-right-padding;
+      line-height: $phi;
+    }
+  }
+
+  &.title-slide {
+    &:after {
+      content: '';
+      //background: url(../../images/io2012_logo.png) no-repeat 100% 50%;
+      //@include background-size(contain);
+      position: absolute;
+      bottom: $slide-top-bottom-padding;
+      right: $slide-top-bottom-padding;
+      width: 100%;
+      height: 60px;
+    }
+  }
+
+  &.backdrop {
+    z-index: -10;
+    display: block !important;
+    @include backdrop;
+
+    &:after, &:before {
+      display: none; // Prevent double set of slide nums and footer icons.
+    }
+  }
+  hgroup {
+    display:flex;
+    flex-direction: column;
+  }
+  > hgroup + article {
+    margin-top: .618em;
+
+    &.flexbox {
+      &.vcenter, &.vleft, &.vright {
+        height: 80%;
+      }
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
+  > article:only-child {
+    height: 100%;
+
+    > iframe {
+      height: 98%;
+    }
+  }
+  > article > footer {
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: .618em;
+    border-top: 2px dashed rgba(90,90,90,.05);
+    h3 {
+    
+    }
+  }
+}
+
+slides.layout-faux-widescreen > slide {
+  padding: $slide-top-bottom-padding 160px;
+}
+
+slides.layout-widescreen,
+slides.layout-faux-widescreen {
+
+  $translateX: 1130px;
+
+  > slide {
+    margin-left: -$slide-width-widescreen / 2;
+    width: $slide-width-widescreen;
+  }
+
+  > slide.far-past {
+    display: block;
+    display: none;
+    @include transform(translate(-$translateX * 2));
+    @include transform(translate3d(-$translateX * 2, 0, 0));
+  }
+
+  > slide.past {
+    display: block;
+    //@include transform(translate(-$translateX));
+    //@include transform(translate3d(-$translateX, 0, 0));
+    opacity: 0;
+  }
+
+  > slide.current {
+    display: block;
+    //@include transform(translate(0));
+    //@include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+
+  > slide.next {
+    display: block;
+    //@include transform(translate($translateX));
+    //@include transform(translate3d($translateX, 0, 0));
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  > slide.far-next {
+    display: block;
+    display: none;
+    @include transform(translate($translateX * 2));
+    @include transform(translate3d($translateX * 2, 0, 0));
+  }
+
+  #prev-slide-area {
+    margin-left: -$slide-width-widescreen / 2 - $slide-tap-area-width;
+  }
+
+  #next-slide-area {
+    margin-left: $slide-width-widescreen / 2;
+  }
+}
