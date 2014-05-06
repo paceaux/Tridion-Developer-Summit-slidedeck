@@ -31,8 +31,8 @@ slides > slide.title-slide:after {
   -o-background-size: contain;
   background-size: contain;
   position: absolute;
-  bottom: 80px;
-  right: 40px;
+  bottom: 41.618em;
+  right: 1.618em;
   width: 100%;
   height: 90px;
 }
