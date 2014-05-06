@@ -1,6 +1,9 @@
 $social-tags: '';
 $brand-small-icon-size: 30px;
 
+$phi: 1.618;
+$fi: .618;
+
 $gray-1: #e6e6e6;
 $gray-2: #a9a9a9;
 $gray-3: #797979;
@@ -22,13 +25,13 @@ $brand-green: rgb(13, 168, 97);
 $brand-green-secondary: #00a86d;
 $brand-green-secondary2: #009f5d;
 
-$slide-width: 900px;
-$slide-height: 700px;
-$slide-width-widescreen: 1100px;
-$slide-top-bottom-padding: 40px;
-$slide-left-right-padding: 60px;
+$slide-width: 75vw;
+$slide-height: 31.25em;
+$slide-width-widescreen: 98vw;
+$slide-top-bottom-padding: 1.618em;
+$slide-left-right-padding: 1.618vw;
 $slide-border-radius: 5px;
 
-$slide-tap-area-width: 100px;
+$slide-tap-area-width: 3vw;
 
-$article-content-top-padding: 45px;
+$article-content-top-padding: 2.8125em;
