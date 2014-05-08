@@ -23,10 +23,10 @@ Before you start, make sure the `node_modules` folder is in your root directory.
 
 
 ### Power up ###
- 1 Update the `package.json` file so that it contains the appropriate directories
- 2 Edit `slide_config.js` to contain your information
- 3 Navigate to the folder from a command line and type `grunt`
- 4 If you want to present from a node server, from the command line, type, `node server.js`
+ 1. Update the `package.json` file so that it contains the appropriate directories
+ 2. Edit `slide_config.js` to contain your information
+ 3. Navigate to the folder from a command line and type `grunt`
+ 4. If you want to present from a node server, from the command line, type, `node server.js`
  
 Grunt will now watch your slides and CSS, and rebuild your presentation every time you edit a file. 
 
