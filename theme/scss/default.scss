@@ -334,6 +334,19 @@ slide.fill {
 }
 
 /* ===== SLIDE CONTENT ===== */
+
+figure {
+  img {
+    height:40%;
+    width: 40%;
+    -webkit-transform: scale(.5)
+  }
+  figure:hover {
+    img {
+      -webkit-transform: scale(1);
+    }
+  }
+}
 .flexContent{
   display:flex;
   justify-content:space-between;
@@ -350,6 +363,13 @@ slide.fill {
     flex-shrink: 0;
     flex-basis: 16rem
 
+  }
+  figure{
+    display: flex;
+    figcaption {
+      flex-basis: 38.2%;
+      margin: 0 0 0 1.618em
+    }
   }
 }
 .flexList{
