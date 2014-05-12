@@ -402,6 +402,20 @@ figure {
     }
   }
 }
+.calloutGroup {
+  li, p{
+    flex-grow: 1;
+    flex-basis: 25%;
+    border-radius: .25em;    
+  }
+  .build-current {
+    background-color: aliceblue;
+    flex-basis: 25%;    
+  }
+  .to-build{
+    flex-basis: 0%;
+  } 
+}
 .flexList{
   display:flex;
   flex-basis: $pctPhi;
@@ -420,19 +434,16 @@ figure {
     align-self:baseline;
     flex-basis: 45%;
   }
+  &.centeredItems{
+    li {
+      display:flex;
+      align-items:center;
+      justify-content: center;
+    }
+  }
   li{
     padding: .618em;
     margin: .618em;
-    border-radius: .25em;
-    flex-grow: 1;
-    flex-basis: 25%;
-    &.build-current {
-      background-color: aliceblue;
-      flex-basis: 25%;
-    }
-    &.to-build{
-      flex-basis: 0%;
-    }
   }
   &.column {
     flex-direction: row;
