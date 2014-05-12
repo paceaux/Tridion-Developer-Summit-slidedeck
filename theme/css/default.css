@@ -1465,51 +1465,61 @@ figure figure:hover img {
   align-items: stretch;
 }
 /* line 362, ../scss/default.scss */
-.flexContent .column {
+.flexContent .column, .flexContent.column {
+  display: flex;
   flex-direction: column;
 }
-/* line 365, ../scss/default.scss */
+/* line 366, ../scss/default.scss */
+.flexContent.column {
+  justify-content: flex-start;
+}
+/* line 369, ../scss/default.scss */
+.flexContent .column {
+  justify-content: space-between;
+}
+/* line 372, ../scss/default.scss */
 .flexContent.centered {
   width: 80%;
   align-self: center;
 }
-/* line 369, ../scss/default.scss */
+/* line 376, ../scss/default.scss */
 .flexContent .row {
+  display: flex;
   flex-direction: row;
 }
-/* line 372, ../scss/default.scss */
+/* line 380, ../scss/default.scss */
 .flexContent .first {
   order: -1;
 }
-/* line 375, ../scss/default.scss */
+/* line 383, ../scss/default.scss */
 .flexContent .last {
   order: 1;
 }
-/* line 378, ../scss/default.scss */
+/* line 386, ../scss/default.scss */
 .flexContent .top {
   align-self: flex-start;
 }
-/* line 381, ../scss/default.scss */
+/* line 389, ../scss/default.scss */
 .flexContent .bottom {
   align-self: flex-end;
 }
-/* line 384, ../scss/default.scss */
+/* line 392, ../scss/default.scss */
 .flexContent iframe {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 16rem;
 }
-/* line 389, ../scss/default.scss */
+/* line 397, ../scss/default.scss */
 .flexContent figure {
   display: flex;
 }
-/* line 391, ../scss/default.scss */
+/* line 399, ../scss/default.scss */
 .flexContent figure figcaption {
   flex-basis: 38.2%;
   margin: 0 0 0 1.618em;
 }
 
-/* line 397, ../scss/default.scss */
+/* line 405, ../scss/default.scss */
 .flexList {
   display: flex;
   flex-basis: 61.8%;
@@ -1519,17 +1529,17 @@ figure figure:hover img {
   min-width-flex-direction: row;
   min-width-margin-bottom: .618em;
 }
-/* line 407, ../scss/default.scss */
+/* line 415, ../scss/default.scss */
 .flexList dt {
   align-self: baseline;
   flex-basis: 33%;
 }
-/* line 411, ../scss/default.scss */
+/* line 419, ../scss/default.scss */
 .flexList dd {
   align-self: baseline;
   flex-basis: 45%;
 }
-/* line 415, ../scss/default.scss */
+/* line 423, ../scss/default.scss */
 .flexList li {
   padding: .618em;
   margin: .618em;
@@ -1537,22 +1547,22 @@ figure figure:hover img {
   flex-grow: 1;
   flex-basis: 25%;
 }
-/* line 421, ../scss/default.scss */
+/* line 429, ../scss/default.scss */
 .flexList li.build-current {
   background-color: aliceblue;
   flex-basis: 25%;
 }
-/* line 425, ../scss/default.scss */
+/* line 433, ../scss/default.scss */
 .flexList li.to-build {
   flex-basis: 0%;
 }
-/* line 429, ../scss/default.scss */
+/* line 437, ../scss/default.scss */
 .flexList.column {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-/* line 435, ../scss/default.scss */
+/* line 443, ../scss/default.scss */
 .flexList.row {
   flex-direction: row;
   width: 98%;
@@ -1560,48 +1570,48 @@ figure figure:hover img {
   margin-left: 0;
 }
 
-/* line 443, ../scss/default.scss */
+/* line 451, ../scss/default.scss */
 .logoslide img {
   width: 383px;
   height: 92px;
 }
 
-/* line 449, ../scss/default.scss */
+/* line 457, ../scss/default.scss */
 .segue {
   padding: 1.618vw 3.236vw;
 }
-/* line 452, ../scss/default.scss */
+/* line 460, ../scss/default.scss */
 .segue h2 {
   color: #e6e6e6;
   font-size: 3.75em;
 }
-/* line 456, ../scss/default.scss */
+/* line 464, ../scss/default.scss */
 .segue h3 {
   color: #e6e6e6;
   line-height: 2.8;
 }
-/* line 460, ../scss/default.scss */
+/* line 468, ../scss/default.scss */
 .segue hgroup {
   position: absolute;
   bottom: 225px;
 }
 
-/* line 466, ../scss/default.scss */
+/* line 474, ../scss/default.scss */
 .thank-you-slide {
   background: #335ebe !important;
   color: white;
 }
-/* line 470, ../scss/default.scss */
+/* line 478, ../scss/default.scss */
 .thank-you-slide h2 {
   font-size: 3.75em;
   color: inherit;
 }
-/* line 475, ../scss/default.scss */
+/* line 483, ../scss/default.scss */
 .thank-you-slide article > p {
   margin-top: 2em;
   font-size: 1.25em;
 }
-/* line 480, ../scss/default.scss */
+/* line 488, ../scss/default.scss */
 .thank-you-slide > p {
   position: absolute;
   bottom: 3.236em;
@@ -1609,7 +1619,7 @@ figure figure:hover img {
   line-height: 1.3;
 }
 
-/* line 488, ../scss/default.scss */
+/* line 496, ../scss/default.scss */
 aside.gdbar {
   height: 97px;
   width: 215px;
@@ -1633,7 +1643,7 @@ aside.gdbar {
   transition: all 0.5s ease-out 0.5s;
   /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 }
-/* line 499, ../scss/default.scss */
+/* line 507, ../scss/default.scss */
 aside.gdbar.right {
   right: 0;
   left: -moz-initial;
@@ -1646,7 +1656,7 @@ aside.gdbar.right {
   -o-transform: rotateZ(180deg);
   transform: rotateZ(180deg);
 }
-/* line 506, ../scss/default.scss */
+/* line 514, ../scss/default.scss */
 aside.gdbar.right img {
   -webkit-transform: rotateZ(180deg);
   -moz-transform: rotateZ(180deg);
@@ -1654,13 +1664,13 @@ aside.gdbar.right img {
   -o-transform: rotateZ(180deg);
   transform: rotateZ(180deg);
 }
-/* line 511, ../scss/default.scss */
+/* line 519, ../scss/default.scss */
 aside.gdbar.bottom {
   top: -moz-initial;
   top: initial;
   bottom: 1.618vw;
 }
-/* line 517, ../scss/default.scss */
+/* line 525, ../scss/default.scss */
 aside.gdbar img {
   width: 85px;
   height: 85px;
@@ -1669,18 +1679,18 @@ aside.gdbar img {
   margin: 8px 15px;
 }
 
-/* line 528, ../scss/default.scss */
+/* line 536, ../scss/default.scss */
 .title-slide hgroup {
   bottom: 1em;
 }
-/* line 530, ../scss/default.scss */
+/* line 538, ../scss/default.scss */
 .title-slide hgroup h1 {
   font-size: 4em;
   line-height: 1.618;
   letter-spacing: -3px;
   color: #515151;
 }
-/* line 537, ../scss/default.scss */
+/* line 545, ../scss/default.scss */
 .title-slide hgroup h2 {
   position: relative;
   top: -.618em;
@@ -1688,18 +1698,18 @@ aside.gdbar img {
   color: darkgrey;
   font-weight: inherit;
 }
-/* line 545, ../scss/default.scss */
+/* line 553, ../scss/default.scss */
 .title-slide hgroup p {
   font-size: 1.25em;
   color: #797979;
   line-height: 1.618;
 }
 
-/* line 553, ../scss/default.scss */
+/* line 561, ../scss/default.scss */
 .quote {
   color: #e6e6e6;
 }
-/* line 556, ../scss/default.scss */
+/* line 564, ../scss/default.scss */
 .quote .author {
   font-size: 1.5em;
   position: absolute;
@@ -1707,22 +1717,22 @@ aside.gdbar img {
   line-height: 1.4;
 }
 
-/* line 565, ../scss/default.scss */
+/* line 573, ../scss/default.scss */
 [data-config-contact] a {
   color: white;
   border-bottom: none;
 }
-/* line 569, ../scss/default.scss */
+/* line 577, ../scss/default.scss */
 [data-config-contact] span {
   width: 115px;
   display: inline-block;
 }
 
-/* line 578, ../scss/default.scss */
+/* line 586, ../scss/default.scss */
 .overview.popup .note {
   display: none !important;
 }
-/* line 584, ../scss/default.scss */
+/* line 592, ../scss/default.scss */
 .overview slides slide {
   display: block;
   cursor: pointer;
@@ -1735,20 +1745,20 @@ aside.gdbar img {
   background: linear-gradient(#ffffff, #ffffff 85%, #e6e6e6);
   background-color: white;
 }
-/* line 585, ../scss/default.scss */
+/* line 593, ../scss/default.scss */
 .overview slides slide.backdrop {
   display: none !important;
 }
-/* line 600, ../scss/default.scss */
+/* line 608, ../scss/default.scss */
 .overview slides slide.far-past, .overview slides slide.past, .overview slides slide.next, .overview slides slide.far-next, .overview slides slide.far-past {
   opacity: 0.5;
   display: block;
 }
-/* line 605, ../scss/default.scss */
+/* line 613, ../scss/default.scss */
 .overview slides slide.current {
   opacity: 1;
 }
-/* line 611, ../scss/default.scss */
+/* line 619, ../scss/default.scss */
 .overview .slide-area {
   display: none;
 }

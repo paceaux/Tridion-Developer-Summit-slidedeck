@@ -359,14 +359,22 @@ figure {
   &.stretchColumns{
     align-items: stretch;
   }
-  .column{
+  .column, &.column{
+    display: flex;
     flex-direction: column;
+  }
+  &.column{
+    justify-content: flex-start;
+  }
+  .column{
+    justify-content: space-between;
   }
   &.centered{
     width: 80%;
     align-self: center;
   }
   .row{
+    display:flex;
     flex-direction: row;
   }
   .first{
