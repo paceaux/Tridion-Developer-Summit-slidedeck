@@ -12,7 +12,7 @@ dl.smaller, ul.smaller {
     font-family: monospace;
   }
 }
-article.small {
+.small {
   p, ul, dl {
     font-size: .8em;
     line-height: 1.25;
@@ -35,7 +35,7 @@ article.small {
     }
   }
 }
-article.smaller {
+.smaller {
   p, ul, dl {
     font-size: .85em;
     line-height: 1.25;
