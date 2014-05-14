@@ -8,8 +8,14 @@
     opacity: 1;
   }
 }
-
-pre {
+[contenteditable="true"] {
+  display: block;
+}
+pre{
+  max-height: 12em;
+  overflow-y: scroll;
+}
+pre, [contenteditable="true"] {
   font-family: 'Source Code Pro', 'Courier New', monospace;
   font-size: 1.25em;
   line-height: 1.4;
@@ -27,7 +33,7 @@ pre {
   &[data-lang]:after {
     content: attr(data-lang);
     background-color: $gray-2;
-    right: 0;
+    right: 8px;
     top: 0;
     position: absolute;
     font-size: .5em;
@@ -47,7 +53,14 @@ code {
   font-family: 'Source Code Pro', 'Courier New', monospace;
   color: black;
 }
-
+figure{
+  pre{
+    flex-basis: 17.5em;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
 /* Pretty print */
 
 .prettyprint .str, /* string content */
