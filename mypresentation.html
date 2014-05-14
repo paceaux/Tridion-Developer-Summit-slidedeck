@@ -39,16 +39,20 @@
                 <h2>Media Manager</h2>
                 <h3>Our Goals</h3>
             </hgroup>
-            <article>
+            <article class="big">
                 <p>
                     We have four major goals in the next hour:
                 </p>
-                <ul class="build">
+                <ul class="build calloutGroup flexList row centeredItems">
                     <li>Introduce Media Manager</li>
                     <li>Put Videos on a web page</li>
                     <li>Put Videos in Tridion</li>
                     <li>Hack, Crack, and trick out Media Manager</li>
                 </ul>
+                <footer class="build">
+                    <h3>Warning</h3>
+                    <p>CSS Tricks, JavaScript hacks, and Internet Explorer are in your future.</p>
+                </footer>
             </article>
 
         </slide>
@@ -57,31 +61,31 @@
                 <h2>Media Manager</h2>
                 <h3>The Agenda</h3>
             </hgroup>
-            <article class="columns-2">
-                <div class="left">
-                    <p>Starting in Media Manager:</p>
+            <article class="big flexContent stretchColumns">
+                <div class="left column">
+                    <h3>Starting in Media Manager:</h3>
                     <ul class="build">
                         <li>Assets</li>
                         <li>Programs</li>
                         <li>Distributions</li>
                         <li>Outlets</li>
                     </ul>
-                    <p>Putting Videos on a Web Page</p>
+                    <h3>Putting Videos on a Web Page</h3>
                     <ul class="build">
-                        <li>Media Manager's JavaScript</li>
                         <li>iframes</li>
+                        <li>JavaScript</li>
                         <li>Ajax</li>
                     </ul>
                 </div>
-                <div class="right">
-                    <p>Putting Videos in Tridion</p>
+                <div class="right column">
+                    <h3>Putting Videos in Tridion</h3>
                     <ul class="build">
                         <li>A typical Schema</li>
                         <li>A typical component template</li>
-                        <li>The ECL Connector</li>
                     </ul>
-                    <p>Tricks and Tools</p>
+                    <h3>Tricks and Tools</h3>
                     <ul class="build">
+                        <li>jQuery</li>
                         <li>jQuery Plugins</li>
                         <li>Fun with Ajax</li>
                         <li>Playing with the projekktor API</li>
@@ -94,12 +98,41 @@
                 <h2>Starting in Media Manager</h2>
             </hgroup>
             <article class="flexContent column">
-                <p>All of the fun things that a content author would be interested in will start with the media explorer</p>
-                <iframe data-src="http://nationwide.sdlmedia.com/Common/ApplicationHost/index.htm#app=mm&entry=SDL.MM.Home"></iframe>
+                <p>It's important to understand the relationship between the four major divisions of Media Manager</p>
+
+                <dl class="build flexList column">
+                    <dt>Assets: The raw file
+
+                </dt>
+                    <dd>(In Tridion, you'd think of it as a component)</dd>
+                    </li>
+                    <dt>Programs: a collection of one or more assets
+                </dt>
+                    <dd>(In Tridion, you'd call this a page)</dd>
+                    </li>
+                    <dt>
+                Outlets:  The presentation of a program 
+                </dt>
+                    <dd>(In Tridion, would be a page or a component template)</dd>
+                    </li>
+                    <dt>
+                Distribution: The combination of Program and Outlet
+                </dt>
+                    <dd>
+                        (In Tridion, this would be a component presentation)</dd>
+
+                    </li>
+                </dl>
+                <footer class="build">
+                    <h3>The Big Idea</h3>
+                    <p>Media Manager abstracts content and design just like Tridion does.</p>
+                </footer>
                 <aside class="note">
-                    <p>Media Manager is a combination of accounts and clients</p>
-                    <p>Everything is separated into folders</p>
-                    <p>default folders are Audio, Documents, Images, and Videos</p>
+                    <ul>
+                        <li>Media Manager is a combination of accounts and clients</li>
+                        <li>Everything is separated into folders</li>
+                        <li>default folders are Audio, Documents, Images, and Videos</li>
+                    </ul>
                 </aside>
             </article>
         </slide>
@@ -108,8 +141,78 @@
                 <h2>Starting in Media Manager</h2>
                 <h3>Assets</h3>
             </hgroup>
-            <article>
-                <p>here's info about assets</p>
+            <article class="flexContent column smaller">
+                <p>The cool factor of Media Manager is that you don't have to think about codecs, file formats, and browser support.</p>
+
+                <p>When you upload your asset, be prepared to fill in a few fields for it</p>
+
+                <dl class="flexList column">
+                    <dt>Keywords</dt>
+                    <dd>Metadata for finding the Asset later in Media Manager</dd>
+                    <dt>Tags</dt>
+                    <dd>Your controlled "vocabulary"</dd>
+                    <dt>People</dt>
+                    <dd>People that appear in the asset</dd>
+                    <dt>Location</dt>
+                    <dd>Where the asset was recorded</dd>
+                    <dt>Author</dt>
+                    <dd>Person who made the asset</dd>
+                    <dt>copyright</dt>
+                    <dd>Entity to whom the copyright notice applies</dd>
+                    <dt>Max Programs</dt>
+                    <dd>How many times/ways the asset can be used</dd>
+                    <dt>Available for web Publishing</dt>
+                    <dd>Whether you can distribute the asset</dd>
+                </dl>
+                <footer>
+                    <h3>Pro Tips:</h3>
+                    <ul class="build flexList row calloutGroup centeredItems">
+                        <li>Add subtitles, voice overs, backslides, custom events to videos</li>
+                        <li>Grab stills from videos</li>
+                        <li>Crop images</li>
+                        <li>Export your assets to other file types.</li>
+                    </ul>
+                </footer>
+                <!--
+            <table>
+                <thead>
+                    <th>Format</th>
+                    <th>Description</th>
+                    <th>Scala Support</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MP3</td><td>MPEG-1 Layer 3</td><td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>AAC</td><td>Advanced Audio Codec</td><td>No</td>
+                    </tr>
+                    <tr>
+                        <td>WAV</td><td>Wave</td><td>No</td>
+                    </tr>
+                    <tr>
+                        <td>AIFF</td><td>Audio Interchange File Format</td><td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>OGG</td><td>Ogg Vorbis</td><td>No</td>
+                    </tr>
+                    <tr>
+                        <td>WMA</td><td>Windows Media Audio</td><td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>AC3</td><td>Dolby Digital</td><td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+-->
+
+                <aside class="note">
+                    <h3>There are some "gotchas" when you upload an asset:</h3>
+                    <ul>
+                        <li>Don't use special characters in any of the fields.</li>
+                        <li>Western European languages can use alphanumerics. Non Western languages should use native characters.</li>
+                    </ul>
+                </aside>
             </article>
         </slide>
         <slide data-slide-src="content/slides/12.html">
@@ -117,52 +220,492 @@
                 <h2>Starting in Media Manager</h2>
                 <h3>Programs</h3>
             </hgroup>
-            <article>
-                <p>here's info about assets</p>
+            <article class="flexContent column">
+                <p>A program needs some fields, just like an asset:</p>
+                <table class="technical">
+                    <caption>
+                        <p>
+                            <sup>*</sup>If you share the link to a distribution <em>before</em> the program is available, or <em>after</em> it isn't, you're in trouble.
+                        </p>
+                        <p>
+                            <sup>***</sup>Maximum views is important because SDL bills you, in part, by the number of times your distribution gets viewed.
+                        </p>
+                    </caption>
+                    <tr>
+                        <th>Folder</th>
+                        <td>Where you store it</td>
+                        <tr>
+                            <th>Title</th>
+                            <td>Title of your program</td>
+                            <tr>
+                                <th>Description</th>
+                                <td>Description of the program</td>
+                                <tr>
+                                    <th>Keywords</th>
+                                    <td>Metadata for the program</td>
+                                    <tr>
+                                        <th>Available from</th>
+                                        <td>When is the program available?<sup>*</sup>
+                                        </td>
+                                        <tr>
+                                            <th>Available until</th>
+                                            <td>When is the program no longer available?<sup>*</sup>
+                                            </td>
+                                            <tr>
+                                                <th>Maximum Views</th>
+                                                <td>Number of times the program should be viewed?<sup>***</sup>
+                                                </td>
+                </table>
+
+                <footer class="smaller">
+                    <h3>Pro Tips:</h3>
+                    <ul class="build flexList row calloutGroup ">
+                        <li>
+                            Use <em>either</em> the <code>available</code> fields, or managing your expirations from Tridion. <strong>But definitely not both</strong>
+                        </li>
+                        <li>Only use <code>Maximum Views</code> if you're on a tight budget</li>
+                    </ul>
+                </footer>
             </article>
         </slide>
         <slide data-slide-src="content/slides/13.html">
             <hgroup>
                 <h2>Starting in Media Manager</h2>
-                <h3>Distributions</h3>
+                <h3>Outlets</h3>
             </hgroup>
-            <article>
-                <p>here's info about assets</p>
+            <article class="flexContent column">
+                <table class="technical small">
+                    <tr>
+                        <th>Audio Player</th>
+                        <td>Plays your Audio</td>
+                        <tr>
+                            <th>YouTube Connector</th>
+                            <td>Connects Media manager to a YouTube Account</td>
+                            <tr>
+                                <th>Download</th>
+                                <td>Lets you download an asset</td>
+                                <tr>
+                                    <th>HTML Gallery</th>
+                                    <td>Creates a Gallery</td>
+                                    <tr>
+                                        <th>HTML Image</th>
+                                        <td>Shows an image</td>
+                                        <tr>
+                                            <th>Flash Player</th>
+                                            <td>Shows some Flash</td>
+                                            <tr>
+                                                <th><b>HTML5 Player</b>
+                                                </th>
+                                                <td>Does the awesomeness</td>
+                                                <tr>
+                                                    <th>Mobile Player</th>
+                                                    <td>Puts a low quality video for mobile phones</td>
+                </table>
+                <footer class="calloutGroup">
+                    <h3>The Big Idea:</h3>
+                    <p>
+                        You don't get many configuration options with anything other than the HTML5 player.
+                    </p>
+                    <p>
+                        We're here today for the HTML5 player.
+                    </p>
+                </footer>
             </article>
+
+
         </slide>
         <slide data-slide-src="content/slides/14.html">
             <hgroup>
                 <h2>Starting in Media Manager</h2>
-                <h3>Outlets</h3>
+                <h3>Outlets | The HTML5 Player</h3>
+            </hgroup>
+            <article class="flexContent column">
+                <p>What Can you customize?</p>
+                <table>
+                    <tr>
+                        <th>Theme:</th>
+                        <td>we can actually specify a directory for the CSS</td>
+                        <tr>
+                            <th>Styling:</th>
+                            <td>the buffer color, image, the control bar, image sprites, and all the buttons</td>
+                            <tr>
+                                <th>Layering:</th>
+                                <td>Layers of individual elements</td>
+                                <tr>
+                                    <th>Layout:</th>
+                                    <td>Height, width, and the position.
+                                        <tr>
+                                            <th>Fonts:</th>
+                                            <td>you can designate font family, font size, font weight, text shadows and text transforms</td>
+                                            <tr>
+                                                <th>Color:</th>
+                                                <td>colors for the backgrounds, the text, and hover colors.</td>
+                                                <tr>
+                                                    <th>Logo:</th>
+                                                    <td>You can set a logo in the video, as a watermark</td>
+                </table>
+                <footer class="small">
+                    <h3>Pro Tips:</h3>
+                    <ul class="build flexList row calloutGroup centeredItems">
+                        <li>
+                            Focus on branding
+                        </li>
+                        <li>Make fewer, high-quality outlets</li>
+                        <li>Name your outlets like your component templates</li>
+                    </ul>
+                </footer>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/141.html">
+            <hgroup>
+                <h2>Starting in Media Manager</h2>
+                <h3>Outlets | The HTML5 Player | Customization Tips</h3>
+            </hgroup>
+            <article class="flexContent column">
+                <table>
+                    <tr>
+                        <th>Theme:</th>
+                        <td>Publish your CSS to a CDN or some public directory.
+                            <br />Clients who want CSS to go through a dev-qa-prod process may get cranky over this.</td>
+                        <tr>
+                            <th>Styling:</th>
+                            <td>Most designers aren't prepared for the customization options that are offered.
+                                <br />Be prepared to answer lots of questions.
+                            </td>
+                            <tr>
+                                <th>Layering:</th>
+                                <td>A danger zone.
+                                    <br />If HTML5 falls back to Flash (like in an IE browser), the &lt;object>element supercedes all other z-indexing.</td>
+                                <tr>
+                                    <th>Layout:</th>
+                                    <td>You must provide a height and width using only an integer.
+                                        <br />px, %, and em are not accepted
+                                        <br />You can change the unit of measurement with JavaScript&mdash; so long as you used the JavaScript approach.
+                                    </td>
+                                    <tr>
+                                        <th>Fonts:</th>
+                                        <td>Designate any fonts that you want&mdash; even fonts that are included with typekit.</td>
+                                        <tr>
+                                            <th>Color:</th>
+                                            <td>You must provide color in hexadecimal. RGB, RGBA, and HSLA are not accepted.</td>
+                </table>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/15.html">
+            <hgroup>
+                <h2>Starting in Media Manager</h2>
+                <h3>Distributions</h3>
+            </hgroup>
+            <article class="flexContent column stretchColumns wrap">
+                <div class="left">
+                    <p>You upload an asset and make a program with it,<em> so that</em> you can distribute it with an outlet</p>
+
+                    <p>The distribution is the only thing that gets viewed by the end user.</p>
+                </div>
+                <figure class="column">
+                    <img src="images/outlets.png" alt="shot of an outlet" />
+                    <figcaption>
+                        If you haven't published a distribution, then you won't get a live URL.
+                    </figcaption>
+                </figure>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/16.html">
+            <hgroup>
+                <h2>Starting in Media Manager</h2>
+                <h3>Distributions</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+                <p>The distribution is where the magic happens!</p>
+
+
             </article>
         </slide>
         <slide data-slide-src="content/slides/20.html">
             <hgroup>
                 <h2>Putting Videos on a Web Page</h2>
+                <h3>iframes</h3>
             </hgroup>
-            <article>
-                <p>here's info about assets</p>
+            <article class="small flexContent row stretchColumns wrap">
+                <div class="left column">
+                    <p>The iframe and Ajax approach will both use the URL in the distribution window.</p>
+                    <p>The JavaScript approach involves copying and pasting the code.</p>
+                </div>
+                <figure class="row">
+                    <img src="images/outlets.png" alt="shot of an outlet" />
+
+                    <figcaption class="build calloutGroup">
+                        <h3>Food for thought:</h3>
+                        <p>What's easiest for the developer isn't necessarily easiest for the content author.</p>
+                        <p>Additional interactivity with the video will affect your choice of approach</p>
+                    </figcaption>
+                </figure>
             </article>
         </slide>
         <slide data-slide-src="content/slides/21.html">
             <hgroup>
                 <h2>Putting Videos on a Web Page</h2>
-                <h3>Media Manager's JavaScript</h3>
+                <h3>iframes</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+                <p>Use this if:</p>
+                <ul>
+                    <li>You have to deliver in the next 10 minutes.</li>
+
+                    <li>You want to create functionality that allows the end-user to change videos.</li>
+
+                    <li>You want to put the video in a modal window</li>
+                </ul>
+                <pre class="prettyprint" data-lang="html">
+ &lt;iframe src="http://nationwide.dist.sdlmedia.com/Distributions/
+ ?o=DCF7FD8E-E793-4690-B280-9E5493C60B51"&gt;
+ &lt;/iframe&gt;
+</pre>
+                <footer>
+                    <h3>Pro Tips:</h3>
+                    <ul class="flexList row buildlist calloutGroup">
+                        <li>Use iframes if you need to allow users to switch out videos</li>
+                        <li>Use an outlet that won't change</li>
+                    </ul>
+                </footer>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/211.html">
+            <hgroup>
+                <h2>Putting Videos on a Web Page</h2>
+                <h3>iframes | Example</h3>
+            </hgroup>
+            <article class="flexContent">
+                <style type="text/css" scoped>
+                    iframe {
+                        height: 200px;
+                        width: 400px;
+                        resize: both;
+                    }
+                </style>
+                <figure>
+                    <iframe data-src="http://nationwide.dist.sdlmedia.com/Distributions/?o=DCF7FD8E-E793-4690-B280-9E5493C60B51"></iframe>
+
+                    <figcaption>
+                        <h3>Trust me on this:</h3>
+                        <ul>
+                            <li>You need to set a height and width on the iframe (ideally with CSS) &mdash; and it should match your outlet dimensions</li>
+                            <li>The fullscreen button won't work</li>
+                            <li>Iframes don't like being responsive (but it can be done)</li>
+                            <li>You can't apply external controls to the video</li>
+                        </ul>
+                    </figcaption>
+                </figure>
             </article>
         </slide>
         <slide data-slide-src="content/slides/22.html">
             <hgroup>
                 <h2>Putting Videos on a Web Page</h2>
-                <h3>iframes</h3>
+                <h3>JavaScript</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+                <p>Media Manager provides a JavaScript snippet that an end-user can use, a bit like YouTube.</p>
+
+                <p>Use this if:</p>
+                <ul>
+                    <li>You're only going to have one video on a page</li>
+
+                    <li>You want to create functionality that allows the end user to <em>control</em> the video.</li>
+
+                    <li>You want to edit the presentation of the video outside of Media Manager</li>.
+                </ul>
+                <pre class="prettyprint" data-lang="html">
+&lt;script type="text/javascript" language="javascript"
+src="http://nationwide.dist.sdlmedia.com/Distributions/
+<b>embed</b>/?o=DCF7FD8E-E793-4690-B280-9E5493C60B51">
+&lt;/script>
+      </pre>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/221.html">
+            <hgroup>
+                <h2>Putting Videos on a Web Page</h2>
+                <h3>JavaScript | Example</h3>
+            </hgroup>
+            <article>
+                <style type="text/css" scoped>
+                    #demo1 {
+                        height: 350px;
+                    }
+                    #demo1 div {
+                        width: 500px;
+                        height: 350px;
+                    }
+                </style>
+                <figure class="flexContent row" id="demo1">
+
+                    <script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=DCF7FD8E-E793-4690-B280-9E5493C60B51&trgt=self">
+                    </script>
+                    <div id="self">
+                    </div>
+                    <figcaption>
+                        <h3>Trust me on this:</h3>
+                        <ul>
+                            <li>Make sure you have jQuery on the page already</li>
+                            <li>You don't want to put more than one script on the page</li>
+                            <li>Because of some very odd z-indexing, you can't put an embedded video in a modal window(it'll close the window)</li>
+                        </ul>
+                    </figcaption>
+                </figure>
+
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/222.html">
+            <hgroup>
+                <h2>Putting Videos on a Web Page</h2>
+                <h3>JavaScript | Responsive HTML &amp; CSS</h3>
+            </hgroup>
+            <article class="medium">
+                <pre class="prettyprint" data-lang="html">
+&lt;div class="container">
+    &lt;div class="wrap">
+        &lt;script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=1F2C97BE-DE64-467C-A6D1-3A5DCFE38215">&lt;/script>
+    &lt;/div>
+&lt;/div>
+</pre>
+                <pre class="prettyprint" data-lang="css">
+.container {
+    <b>width: 16em;</b>
+}
+.wrap {
+    position:relative;
+    overflow: hidden;
+    display: block;
+    height: 0;
+    <b>padding-bottom: 56.25%;</b>
+    border: 2px solid black;
+    background: gray;
+}
+</pre>
+
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/223.html">
+            <hgroup>
+                <h2>Putting Videos on a Web Page</h2>
+                <h3>JavaScript | Example | Responsive</h3>
+            </hgroup>
+            <article>
+                <style type="text/css" scoped>
+                    .demo .container {
+                        width: 16em;
+                    }
+                    .demo .wrap {
+                        position: relative;
+                        overflow: hidden;
+                        display: block;
+                        height: 0;
+                        padding-bottom: 56.25%;
+                        border: 2px solid black;
+                        background: gray;
+                    }
+                </style>
+                <script type="text/javascript" class="prettyprint">
+                    var mmresize;
+                    mmresize = {
+                        init: function() {
+                            var _this = mmresize;
+                            _this.functions.resizeProjekktor(); //we don't want to set projekktor dimensions to "inherit" every time
+                            _this.functions.responsifyVideo(); // resize the video
+                        },
+                        functions: {
+                            resizeProjekktor: function() {
+                                var $projekktor = $('.projekktor');
+                                $projekktor.css({
+                                    width: 'inherit',
+                                    height: 'inherit'
+                                });
+                            },
+                            responsifyVideo: function(width) {
+                                var $projekktor = $('.projekktor'),
+                                    $sdlmm = $projekktor.parent(),
+                                    $container = $sdlmm.parent().parent();
+                                if (width) $container.width(width);
+                                $sdlmm.css({
+                                    width: $container.outerWidth(),
+                                    height: $container.height()
+                                });
+                            }
+                        }
+                    };
+                    /* Wait for jQuery to load on the page */
+                    $(document).ready(function() {
+                        /*first event: when mmplayerready fires */
+                        $(document).on('MMPLAYERREADY', function(e) {
+                            mmresize.init();
+                        });
+                        /*second event, the user plays with the slider */
+                        $('#resizer').on('change', function(e) {
+                            var val = e.target.value,
+                                computeVal = val + 'em';
+                            mmresize.functions.responsifyVideo(computeVal);
+                        });
+                    });
+                </script>
+
+                <figure class="flexContent row">
+                    <div class="demo">
+                        <div class="resizer">
+                            <label for="resizer">Change the width</label>
+                            <input type="range" id="resizer" min="4" max="30" />
+                        </div>
+                        <div class="container">
+                            <div class="wrap">
+                                <script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=1F2C97BE-DE64-467C-A6D1-3A5DCFE38215"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <pre type="text/javascript" class="prettyprint" data-lang="javascript">
+var mmresize;
+mmresize = {
+    init: function () {
+        var _this = mmresize;
+        _this.functions.resizeProjekktor(); //we don't want to set projekktor dimensions to "inherit" every time
+        _this.functions.responsifyVideo();// resize the video
+    },
+    functions: {
+        resizeProjekktor: function () {
+            var $projekktor = $('.projekktor');
+            $projekktor.css({
+                width: 'inherit',
+                height: 'inherit'
+            });        
+        },
+        responsifyVideo: function (width) {
+            var $projekktor = $('.projekktor'),
+                $sdlmm = $projekktor.parent(),
+                $container = $sdlmm.parent().parent();
+            if (width) $container.width(width);
+            $sdlmm.css({
+                width: $container.outerWidth(),
+                height: $container.height()
+            });
+        }
+    }
+};
+/* Wait for jQuery to load on the page */
+$(document).ready(function () {
+    /*first event: when mmplayerready fires */
+    $(document).on('MMPLAYERREADY', function (e) {
+        mmresize.init();
+    });
+    /*second event, the user plays with the slider */
+    $('#resizer').on('change', function (e) {
+        var val = e.target.value,
+            computeVal = val + 'em';
+        mmresize.functions.responsifyVideo(computeVal); 
+    });
+});
+</pre>	
+                    </figcaption>
+                </figure>
+
             </article>
         </slide>
         <slide data-slide-src="content/slides/23.html">
@@ -171,15 +714,59 @@
                 <h3>Ajax</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+                <p>Ajax is the undocumented approach. It involves writing some jQuery that calls the video.</p>
+                <p>Use this if:</p>
+                <ul>
+                    <li>You have jQuery on the page already, and it gets called in the <code>&lt;head></code>
+                    </li>
+
+                    <li>You want to create functionality that allows the end-user to change videos</li>
+
+                    <li>You want to create functionality that allows the end user to <em>control</em> the video</li>
+
+                    <li>You want to edit the presentation of the video outside of Media Manager</li>
+                </ul>
+                <pre class="prettyprint" data-lang="javascript">
+  	$.getScript('http://nationwide.dist.sdlmedia.com/Distributions/
+  	?o=<b>DCF7FD8E-E793-4690-B280-9E5493C60B51</b>')
+  </pre>
+                <h3>But, There's a second approach&hellip;</h3>
+
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/231.html">
+            <hgroup>
+                <h2>Putting Videos on a Web Page</h2>
+                <h3>Ajax | Pointing to a specific element</h3>
+            </hgroup>
+
+            <article>
+                <p>There's a second approach which allows you to set the target of the element</p>
+                <pre class="prettyprint" data-lang="javascript">
+  	$.getScript('http://nationwide.dist.sdlmedia.com/Distributions/
+  	?o=DCF7FD8E-E793-4690-B280-9E5493C60B51<b>&trgt=someAwesomeDiv</b>')
+  </pre>
+                <footer>
+                    <h3>Pro Tips</h3>
+                    <ul class="build flexList row calloutGroup centeredItems">
+                        <li>Target a specific element if you think you'll need extra functionality</li>
+                        <li>Show videos with different sizes/outlets with this method</li>
+                    </ul>
+                </footer>
             </article>
         </slide>
         <slide data-slide-src="content/slides/30.html">
             <hgroup>
                 <h2>Putting Videos in Tridion</h2>
+                <h3>(How to Manage a Media Manager Video)</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+                <p>
+                    Managing a Media Manager video in Tridion is fairly straightforward.
+                </p>
+                <h3>Start with a schema</h3>
+                <h3>Add a component template</h3>
+                <h3>Mix in a little bit of JavaScript</h3>
             </article>
         </slide>
         <slide data-slide-src="content/slides/31.html">
@@ -188,7 +775,58 @@
                 <h3>A Typical Schema</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+
+                <table class="technical">
+                    <caption>You can switch between an iframe, the JavaScript Snippet, and the Ajax approach with a good schema and some supporting JavaScript.
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Schema Name</th>
+                            <th colspan="3">Media Manager</th>
+                        </tr>
+                        <tr>
+                            <th>XML Name</th>
+                            <th>Description</th>
+                            <th>Field Type</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>header</td>
+                            <td>Video Title</td>
+                            <td>Text</td>
+                            <td>Plain Text</td>
+                        </tr>
+                        <tr>
+                            <td>description</td>
+                            <td>Video Description</td>
+                            <td>Text</td>
+                            <td>Rich Text (3 lines)</td>
+
+                        </tr>
+                        <tr>
+                            <td>embedType</td>
+                            <td>Method of Embedding</td>
+                            <td>Text</td>
+                            <td>list:
+                                <ul>
+                                    <li>iframe</li>
+                                    <li>embed</li>
+                                </ul>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>url</td>
+                            <td>Media Manager URL</td>
+                            <td>Text</td>
+                            <td>Plain Text</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
             </article>
         </slide>
         <slide data-slide-src="content/slides/32.html">
@@ -197,16 +835,38 @@
                 <h3>A Typical Component Template</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
-            </article>
-        </slide>
-        <slide data-slide-src="content/slides/33.html">
-            <hgroup>
-                <h2>Putting Videos in Tridion</h2>
-                <h3>The ECL Connector</h3>
-            </hgroup>
-            <article>
-                <p>here's info about assets</p>
+                <pre class="prettyprint" data-lang="razor">
+<b>@helper videoEmbedUrl(string url){
+    return url.Replace("Distributions/","Distributions/embed/");
+} 
+</b>     	
+&lt;figure class="video video--@(Fields.embedType)">
+@if(Fields.header != null){
+	&lt;h1 class="video__header">
+  @Fields.header
+  &lt;/h1>
+}
+&lt;div class="video__player player">
+@if(Fields.embedType != "iframe"){
+	&lt;iframe class="player__iframe" src="@Fields.url">
+  &lt;/iframe>
+} else {
+	&lt;script type="text/javascript" src="@videoEmbedUrl(Fields.url)">&lt;/script>
+}
+&lt;/div>
+@if(Fields.description != null){
+ &lt;figcaption class="video__description">
+	@Fields.description
+ &lt;/figcaption>
+}
+&lt;/figure>
+      </pre>
+                <footer>
+                    <h3>Pro Tip:</h3>
+                    <p>Use the Template to make the switch between an iframe or the embedding JavaScript</p>
+                    <p>A razor helper to change the url is&hellip;helpful
+                    </p>
+                </footer>
             </article>
         </slide>
         <slide data-slide-src="content/slides/40.html">
@@ -214,19 +874,145 @@
                 <h2>Tricks and Tools</h2>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+                <p>A lot of the tricks around Media Manager revolve around tweaking the outlet, playing with the jQuery events, and digging around in the console.</p>
+
+                <ul class="build flexList calloutGroup">
+                    <li>You'll need to use JavaScript or Ajax for any of the cool stuff</li>
+                    <li>Don't be afraid of CSS</li>
+                    <li>Experience with jQuery is important</li>
+                    <li>JavaScript skills will also be helpful</li>
+                </ul>
+
             </article>
         </slide>
         <slide data-slide-src="content/slides/41.html">
             <hgroup>
                 <h2>Tricks and Tools</h2>
-                <h3>jQuery Plugins</h3>
+                <h3>jQuery</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
+                <p>Any jQuery that you write needs to happen inside of the <code>MMPLAYERREADY</code> event.</p>
+
+                <p>Create your own Media Manager namespace, and initiate it inside of MMPLAYERREADY</p>
+                </div>
+                <pre class="prettyprint" data-lang="javascript">
+<b>$(document).on('MMPLAYERREADY', function (e) {
+        mediaManagerMagic.init();
+    });
+</b>
+</pre>
+                <pre class="prettyprint" data-lang="javascript">
+var mediaManagerMagic;
+mediaManagerMagic = {
+  init: function () {
+    var _this = mediaManagerMagic;
+    _this.bindUiEvents();
+    _this.functions.conjunctionFunction();
+  },
+  data: {},
+  helpers: {}
+  bindUiEvents: function () {},
+  functions: {}
+};
+</pre>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/411.html">
+            <hgroup>
+                <h2>Tricks and Tools</h2>
+                <h3>jQuery | Custom Events</h3>
+            </hgroup>
+            <article>
+                <p>You have a handful of jQuery events that propogate up into the container. You can listen to those events and respond accordingly.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><code>player-ready</code>
+                            </th>
+                            <td>Tells you when the player is fully loaded and ready.
+                                <br />This can fire multiple times on a page</td>
+                        </tr>
+                        <tr>
+                            <th><code>show-layer-endstate</code>
+                            </th>
+                            <td>Tells you when the video has finished playing
+                                <br />Useful if you need to do something when the video is over</td>
+                        </tr>
+                        <tr>
+                            <th><code>show-layer-hover</code>
+                            </th>
+                            <td>When the mouse is hovering over the video</td>
+                        </tr>
+                        <tr>
+                            <th><code>fullscreen-enter</code>
+                            </th>
+                            <td>When the video is in fullscreen</td>
+                        </tr>
+                        <tr>
+                            <th><code>fullscreen-exit</code>
+                            </th>
+                            <td>When the video leaves fullscreen</td>
+                        </tr>
+                        <tr>
+                            <th><code>hide-layer</code>
+                            </th>
+                            <td>Tells you that a mouse has stopped moving over the player</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/412.html">
+            <hgroup>
+                <h2>Tricks and Tools</h2>
+                <h3>jQuery | Using Custom Events</h3>
+            </hgroup>
+            <article>
+                <p>Any jQuery that you write needs to happen inside of the <code>MMPLAYERREADY</code> event.</p>
+
+                <p>Create your own Media Manager namespace, and initiate it inside of MMPLAYERREADY</p>
+                </div>
+                <pre class="prettyprint" data-lang="javascript">
+<b>$(document).on('MMPLAYERREADY', function (e) {
+        mediaManagerMagic.init();
+    });
+</b>
+</pre>
+
             </article>
         </slide>
         <slide data-slide-src="content/slides/42.html">
+            <hgroup>
+                <h2>Tricks and Tools</h2>
+                <h3>jQuery Plugins</h3>
+            </hgroup>
+            <article>
+                <div class="build">
+                    <p>If you need to be able to switch between an iframed or an Ajaxed approach, <strong>use a jQuery plugin!</strong>
+                    </p>
+
+                    <p>Before you build a plugin, use what's out there</p>
+
+                    <p>
+                        <code>&lt;!--insert shameless self promotion--></code>
+                        <br />There is a Media Manager plugin on Github</p>
+                </div>
+                <footer>
+                    <h3>Pro Tips</h3>
+                    <ul class="build flexList calloutGroup centeredItems">
+                        <li>Use a plugin that doesn't rely on JavaScript to set parameters</li>
+                        <li><code>data-*</code> attributes are your friend</li>
+                    </ul>
+                </footer>
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/43.html">
             <hgroup>
                 <h2>Tricks and Tools</h2>
                 <h3>Fun with Ajax</h3>
@@ -235,14 +1021,14 @@
                 <p>here's info about assets</p>
             </article>
         </slide>
-        <slide data-slide-src="content/slides/43.html">
-            <hgroup>
-                <h2>Tricks and Tools</h2>
-                <h3>Playing with the projekktor API</h3>
+        <slide data-slide-src="content/slides/44.html">
+            <h2>Tricks and Tools</h2>
+            <h3>Playing with the projekktor API</h3>
+            <p>here's info about assets</p>
+            </article>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
-            </article>
+                <hgroup>
         </slide>
         <slide data-slide-src="content/slides/94.html">
             <hgroup>
