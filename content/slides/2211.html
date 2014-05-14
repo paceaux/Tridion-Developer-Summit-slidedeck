@@ -1,0 +1,31 @@
+    <hgroup>
+      <h2>Putting Videos on a Web Page</h2>
+      <h3>JavaScript  | Tame those dimensions</h3>
+    </hgroup>
+    <article>
+
+<figure class="flexContent row mmdemo2" id="demo2">
+
+<script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=DCF7FD8E-E793-4690-B280-9E5493C60B51">
+</script>
+<figcaption style="order:-1;">
+<h3>There's a CSS-only way to change the dimensions on that video</h3>
+<style type="text/css" contenteditable class="prettyprint" data-lang="css">
+.mmdemo2 [id*="sdlmm_"]{ 
+width: 400px !important; 
+height: 350px !important;
+}
+</style>
+
+
+	</figcaption>
+</figure>
+<aside class="note">
+		<h3>Trust me on this:</h3>
+		<ul>
+			<li>Make sure you have jQuery on the page already</li>
+			<li>You don't want to put more than one script on the page</li>
+			<li>Because of some very odd z-indexing, you can't put an embedded video in a modal window(it'll close the window)</li>
+		 </ul>
+</aside>
+</article>

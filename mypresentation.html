@@ -157,7 +157,7 @@
                     <dd>Where the asset was recorded</dd>
                     <dt>Author</dt>
                     <dd>Person who made the asset</dd>
-                    <dt>copyright</dt>
+                    <dt>Copyright</dt>
                     <dd>Entity to whom the copyright notice applies</dd>
                     <dt>Max Programs</dt>
                     <dd>How many times/ways the asset can be used</dd>
@@ -320,14 +320,16 @@
                 <h3>Outlets | The HTML5 Player</h3>
             </hgroup>
             <article class="flexContent column">
-                <p>What Can you customize?</p>
+                <p><a href="http://nationwide.sdlmedia.com/Common/ApplicationHost/#app=mm&entry=SDL.MM.Outlets">What <del>Can</del>Can't you customize?</a>
+                </p>
                 <table>
                     <tr>
                         <th>Theme:</th>
                         <td>we can actually specify a directory for the CSS</td>
                         <tr>
                             <th>Styling:</th>
-                            <td>the buffer color, image, the control bar, image sprites, and all the buttons</td>
+                            <td>the buffer color, image, the control bar, image sprites, and all the buttons<a href="http://sdllivecontent.sdl.com/LiveContent/web/pub.xql?action=home&pub=SDL_MediaManager_25&lang=en-US#docid=concept_BCA893847C6E4B66B75B8459F3B0D7A3&addHistory=true&query=&scope=&tid=&filename=Modifying_HTML_5_Player.xml&resource=&inner_id=&eventType=lcContent.loadDocconcept_BCA893847C6E4B66B75B8459F3B0D7A3">Check the docs</a>
+                            </td>
                             <tr>
                                 <th>Layering:</th>
                                 <td>Layers of individual elements</td>
@@ -532,7 +534,7 @@ src="http://nationwide.dist.sdlmedia.com/Distributions/
                     #demo1 {
                         height: 350px;
                     }
-                    #demo1 div {
+                    #demo1 > #self {
                         width: 500px;
                         height: 350px;
                     }
@@ -544,15 +546,43 @@ src="http://nationwide.dist.sdlmedia.com/Distributions/
                     <div id="self">
                     </div>
                     <figcaption>
-                        <h3>Trust me on this:</h3>
-                        <ul>
-                            <li>Make sure you have jQuery on the page already</li>
-                            <li>You don't want to put more than one script on the page</li>
-                            <li>Because of some very odd z-indexing, you can't put an embedded video in a modal window(it'll close the window)</li>
-                        </ul>
+
                     </figcaption>
                 </figure>
 
+            </article>
+        </slide>
+        <slide data-slide-src="content/slides/2211.html">
+            <hgroup>
+                <h2>Putting Videos on a Web Page</h2>
+                <h3>JavaScript  | Tame those dimensions</h3>
+            </hgroup>
+            <article>
+
+                <figure class="flexContent row mmdemo2" id="demo2">
+
+                    <script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=DCF7FD8E-E793-4690-B280-9E5493C60B51">
+                    </script>
+                    <figcaption style="order:-1;">
+                        <h3>There's a CSS-only way to change the dimensions on that video</h3>
+                        <style type="text/css" contenteditable class="prettyprint" data-lang="css">
+                            .mmdemo2[id*="sdlmm_"] {
+                                width: 400px !important;
+                                height: 350px !important;
+                            }
+                        </style>
+
+
+                    </figcaption>
+                </figure>
+                <aside class="note">
+                    <h3>Trust me on this:</h3>
+                    <ul>
+                        <li>Make sure you have jQuery on the page already</li>
+                        <li>You don't want to put more than one script on the page</li>
+                        <li>Because of some very odd z-indexing, you can't put an embedded video in a modal window(it'll close the window)</li>
+                    </ul>
+                </aside>
             </article>
         </slide>
         <slide data-slide-src="content/slides/222.html">
@@ -591,120 +621,13 @@ src="http://nationwide.dist.sdlmedia.com/Distributions/
                 <h3>JavaScript | Example | Responsive</h3>
             </hgroup>
             <article>
-                <style type="text/css" scoped>
-                    .demo .container {
-                        width: 16em;
-                    }
-                    .demo .wrap {
-                        position: relative;
-                        overflow: hidden;
-                        display: block;
-                        height: 0;
-                        padding-bottom: 56.25%;
-                        border: 2px solid black;
-                        background: gray;
+                <style type="text/css">
+                    #iframedemo2 {
+                        width: 100%;
+                        height: 400px;
                     }
                 </style>
-                <script type="text/javascript" class="prettyprint">
-                    var mmresize;
-                    mmresize = {
-                        init: function() {
-                            var _this = mmresize;
-                            _this.functions.resizeProjekktor(); //we don't want to set projekktor dimensions to "inherit" every time
-                            _this.functions.responsifyVideo(); // resize the video
-                        },
-                        functions: {
-                            resizeProjekktor: function() {
-                                var $projekktor = $('.projekktor');
-                                $projekktor.css({
-                                    width: 'inherit',
-                                    height: 'inherit'
-                                });
-                            },
-                            responsifyVideo: function(width) {
-                                var $projekktor = $('.projekktor'),
-                                    $sdlmm = $projekktor.parent(),
-                                    $container = $sdlmm.parent().parent();
-                                if (width) $container.width(width);
-                                $sdlmm.css({
-                                    width: $container.outerWidth(),
-                                    height: $container.height()
-                                });
-                            }
-                        }
-                    };
-                    /* Wait for jQuery to load on the page */
-                    $(document).ready(function() {
-                        /*first event: when mmplayerready fires */
-                        $(document).on('MMPLAYERREADY', function(e) {
-                            mmresize.init();
-                        });
-                        /*second event, the user plays with the slider */
-                        $('#resizer').on('change', function(e) {
-                            var val = e.target.value,
-                                computeVal = val + 'em';
-                            mmresize.functions.responsifyVideo(computeVal);
-                        });
-                    });
-                </script>
-
-                <figure class="flexContent row">
-                    <div class="demo">
-                        <div class="resizer">
-                            <label for="resizer">Change the width</label>
-                            <input type="range" id="resizer" min="4" max="30" />
-                        </div>
-                        <div class="container">
-                            <div class="wrap">
-                                <script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=1F2C97BE-DE64-467C-A6D1-3A5DCFE38215"></script>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <pre type="text/javascript" class="prettyprint" data-lang="javascript">
-var mmresize;
-mmresize = {
-    init: function () {
-        var _this = mmresize;
-        _this.functions.resizeProjekktor(); //we don't want to set projekktor dimensions to "inherit" every time
-        _this.functions.responsifyVideo();// resize the video
-    },
-    functions: {
-        resizeProjekktor: function () {
-            var $projekktor = $('.projekktor');
-            $projekktor.css({
-                width: 'inherit',
-                height: 'inherit'
-            });        
-        },
-        responsifyVideo: function (width) {
-            var $projekktor = $('.projekktor'),
-                $sdlmm = $projekktor.parent(),
-                $container = $sdlmm.parent().parent();
-            if (width) $container.width(width);
-            $sdlmm.css({
-                width: $container.outerWidth(),
-                height: $container.height()
-            });
-        }
-    }
-};
-/* Wait for jQuery to load on the page */
-$(document).ready(function () {
-    /*first event: when mmplayerready fires */
-    $(document).on('MMPLAYERREADY', function (e) {
-        mmresize.init();
-    });
-    /*second event, the user plays with the slider */
-    $('#resizer').on('change', function (e) {
-        var val = e.target.value,
-            computeVal = val + 'em';
-        mmresize.functions.responsifyVideo(computeVal); 
-    });
-});
-</pre>	
-                    </figcaption>
-                </figure>
+                <iframe id="iframedemo2" width="100%" height="300" data-src="http://jsfiddle.net/Paceaux/fmKmC/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
             </article>
         </slide>
@@ -730,7 +653,7 @@ $(document).ready(function () {
   	$.getScript('http://nationwide.dist.sdlmedia.com/Distributions/
   	?o=<b>DCF7FD8E-E793-4690-B280-9E5493C60B51</b>')
   </pre>
-                <h3>But, There's a second approach&hellip;</h3>
+                <h3>But, there's a bonus technique&hellip;</h3>
 
             </article>
         </slide>
@@ -751,6 +674,8 @@ $(document).ready(function () {
                     <ul class="build flexList row calloutGroup centeredItems">
                         <li>Target a specific element if you think you'll need extra functionality</li>
                         <li>Show videos with different sizes/outlets with this method</li>
+                        <li>use the id as a hook for additional CSS targetting
+                        </li>
                     </ul>
                 </footer>
             </article>
