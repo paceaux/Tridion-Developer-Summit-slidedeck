@@ -10,7 +10,7 @@ slides > slide {
   margin-left: -$slide-width / 2;
   margin-top: -$slide-height / 2;
   padding: $slide-top-bottom-padding $slide-left-right-padding;
-
+  background-color:white;
   @include border-radius($slide-border-radius);
   //@include box-shadow(5px 5px 20px $gray-4);
   @include transition(all 0.6s ease-in-out);
@@ -141,6 +141,7 @@ slides > slide {
     }
   }
   > article > footer {
+    flex-basis: 8em;
     font-size: 1.25rem;
     display: flex;
     flex-direction: column;

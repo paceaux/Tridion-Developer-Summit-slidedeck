@@ -306,33 +306,49 @@ table {
   border-collapse: -moz-initial;
   border-collapse: initial;
   border-spacing: 2px;
-  border-bottom: 1px solid #797979;
 }
-/* line 53, ../scss/_tables.scss */
+/* line 51, ../scss/_tables.scss */
 table caption {
   font-size: .85em;
   font-style: italic;
+  padding: .618em;
 }
-/* line 57, ../scss/_tables.scss */
+/* line 56, ../scss/_tables.scss */
 table tr > td:first-child, table th {
   font-weight: 600;
   color: #515151;
 }
-/* line 62, ../scss/_tables.scss */
-table tr:nth-child(odd) {
-  background-color: #e6e6e6;
+/* line 60, ../scss/_tables.scss */
+table thead {
+  border-top: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-radius: 3px 3px 0 0;
 }
 /* line 66, ../scss/_tables.scss */
+table thead tr:first-child {
+  border-bottom: 1px solid #e6e6e6;
+}
+/* line 71, ../scss/_tables.scss */
+table tbody {
+  border: 1px solid #797979;
+  border-radius: 0 0 3px 3px;
+}
+/* line 74, ../scss/_tables.scss */
+table tbody tr:nth-child(odd) {
+  background-color: #e6e6e6;
+}
+/* line 78, ../scss/_tables.scss */
 table th {
   font-size: 1.125em;
   font-weight: bold;
 }
-/* line 71, ../scss/_tables.scss */
+/* line 83, ../scss/_tables.scss */
 table td, table th {
   font-size: 1.125em;
   padding: .618em;
 }
-/* line 76, ../scss/_tables.scss */
+/* line 88, ../scss/_tables.scss */
 table td.highlight {
   color: #515151;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(40%, #ffd14d), color-stop(80%, #f6c000)) no-repeat;
@@ -341,7 +357,7 @@ table td.highlight {
   background: -o-linear-gradient(top, #ffd14d 40%, #f6c000 80%) no-repeat;
   background: linear-gradient(top, #ffd14d 40%, #f6c000 80%) no-repeat;
 }
-/* line 81, ../scss/_tables.scss */
+/* line 93, ../scss/_tables.scss */
 table.rows {
   border-bottom: none;
   border-right: 1px solid #797979;
@@ -364,54 +380,89 @@ dl.smaller dt, dl.smaller dd, dl.smaller li, ul.smaller dt, ul.smaller dd, ul.sm
 }
 
 /* line 16, ../scss/_sizevariants.scss */
-article.small p, article.small ul, article.small dl {
-  font-size: .8em;
+.big p, .big ul, .big dl {
+  font-size: 1.4em;
   line-height: 1.25;
   letter-spacing: 0;
 }
-/* line 22, ../scss/_sizevariants.scss */
-article.small table td, article.small table th {
-  font-size: .65em;
+/* line 21, ../scss/_sizevariants.scss */
+.big h3 {
+  font-size: 1.75rem;
 }
-/* line 26, ../scss/_sizevariants.scss */
-article.small pre {
-  font-size: .65em;
+/* line 24, ../scss/_sizevariants.scss */
+.big td, .big th {
+  font-size: 1.5em;
+}
+/* line 27, ../scss/_sizevariants.scss */
+.big pre {
+  font-size: .95em;
   line-height: 1.5;
   letter-spacing: 0;
 }
-/* line 31, ../scss/_sizevariants.scss */
-article.small q {
-  font-size: 40px;
-  line-height: 48px;
+/* line 32, ../scss/_sizevariants.scss */
+.big q {
+  font-size: 50px;
+  line-height: 60px;
 }
-/* line 35, ../scss/_sizevariants.scss */
-article.small q:before, article.small q:after {
+/* line 36, ../scss/_sizevariants.scss */
+.big q:before, .big q:after {
   font-size: 60px;
 }
 
 /* line 41, ../scss/_sizevariants.scss */
-article.smaller p, article.smaller ul, article.smaller dl {
+.medium {
+  font-size: .75em;
+}
+
+/* line 45, ../scss/_sizevariants.scss */
+.small p, .small ul, .small dl {
+  font-size: .8em;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+/* line 50, ../scss/_sizevariants.scss */
+.small td, .small th {
+  font-size: .65em;
+}
+/* line 53, ../scss/_sizevariants.scss */
+.small pre {
+  font-size: .65em;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+/* line 58, ../scss/_sizevariants.scss */
+.small q {
+  font-size: 40px;
+  line-height: 48px;
+}
+/* line 62, ../scss/_sizevariants.scss */
+.small q:before, .small q:after {
+  font-size: 60px;
+}
+
+/* line 68, ../scss/_sizevariants.scss */
+.smaller p, .smaller ul, .smaller dl {
   font-size: .85em;
   line-height: 1.25;
   letter-spacing: 0;
 }
-/* line 47, ../scss/_sizevariants.scss */
-article.smaller table td, article.smaller table th {
+/* line 73, ../scss/_sizevariants.scss */
+.smaller td, .smaller th {
   font-size: .56em;
 }
-/* line 51, ../scss/_sizevariants.scss */
-article.smaller pre {
+/* line 76, ../scss/_sizevariants.scss */
+.smaller pre {
   font-size: .56em;
   line-height: 1.5;
   letter-spacing: 0;
 }
-/* line 56, ../scss/_sizevariants.scss */
-article.smaller q {
+/* line 81, ../scss/_sizevariants.scss */
+.smaller q {
   font-size: 40px;
   line-height: 48px;
 }
-/* line 60, ../scss/_sizevariants.scss */
-article.smaller q:before, article.smaller q:after {
+/* line 85, ../scss/_sizevariants.scss */
+.smaller q:before, .smaller q:after {
   font-size: 60px;
 }
 
@@ -426,6 +477,7 @@ slides > slide {
   margin-left: -37.5vw;
   margin-top: -15.625em;
   padding: 1.618em 1.618vw;
+  background-color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -551,6 +603,7 @@ slides > slide > article:only-child > iframe {
 }
 /* line 143, ../scss/_slides.scss */
 slides > slide > article > footer {
+  flex-basis: 8em;
   font-size: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -559,18 +612,18 @@ slides > slide > article > footer {
   border-top: 2px dashed rgba(90, 90, 90, 0.05);
 }
 
-/* line 156, ../scss/_slides.scss */
+/* line 157, ../scss/_slides.scss */
 slides.layout-faux-widescreen > slide {
   padding: 1.618em 160px;
 }
 
-/* line 165, ../scss/_slides.scss */
+/* line 166, ../scss/_slides.scss */
 slides.layout-widescreen > slide,
 slides.layout-faux-widescreen > slide {
   margin-left: -49vw;
   width: 98vw;
 }
-/* line 170, ../scss/_slides.scss */
+/* line 171, ../scss/_slides.scss */
 slides.layout-widescreen > slide.far-past,
 slides.layout-faux-widescreen > slide.far-past {
   display: block;
@@ -586,26 +639,26 @@ slides.layout-faux-widescreen > slide.far-past {
   -o-transform: translate3d(-2260px, 0, 0);
   transform: translate3d(-2260px, 0, 0);
 }
-/* line 177, ../scss/_slides.scss */
+/* line 178, ../scss/_slides.scss */
 slides.layout-widescreen > slide.past,
 slides.layout-faux-widescreen > slide.past {
   display: block;
   opacity: 0;
 }
-/* line 184, ../scss/_slides.scss */
+/* line 185, ../scss/_slides.scss */
 slides.layout-widescreen > slide.current,
 slides.layout-faux-widescreen > slide.current {
   display: block;
   opacity: 1;
 }
-/* line 191, ../scss/_slides.scss */
+/* line 192, ../scss/_slides.scss */
 slides.layout-widescreen > slide.next,
 slides.layout-faux-widescreen > slide.next {
   display: block;
   opacity: 0;
   pointer-events: none;
 }
-/* line 199, ../scss/_slides.scss */
+/* line 200, ../scss/_slides.scss */
 slides.layout-widescreen > slide.far-next,
 slides.layout-faux-widescreen > slide.far-next {
   display: block;
@@ -621,12 +674,12 @@ slides.layout-faux-widescreen > slide.far-next {
   -o-transform: translate3d(2260px, 0, 0);
   transform: translate3d(2260px, 0, 0);
 }
-/* line 206, ../scss/_slides.scss */
+/* line 207, ../scss/_slides.scss */
 slides.layout-widescreen #prev-slide-area,
 slides.layout-faux-widescreen #prev-slide-area {
   margin-left: -52vw;
 }
-/* line 210, ../scss/_slides.scss */
+/* line 211, ../scss/_slides.scss */
 slides.layout-widescreen #next-slide-area,
 slides.layout-faux-widescreen #next-slide-area {
   margin-left: 49vw;
@@ -747,8 +800,19 @@ dl dd {
   opacity: 1;
 }
 
-/* line 12, ../scss/_code.scss */
+/* line 11, ../scss/_code.scss */
+[contenteditable="true"] {
+  display: block;
+}
+
+/* line 14, ../scss/_code.scss */
 pre {
+  max-height: 12em;
+  overflow-y: scroll;
+}
+
+/* line 18, ../scss/_code.scss */
+pre, [contenteditable="true"] {
   font-family: 'Source Code Pro', 'Courier New', monospace;
   font-size: 1.25em;
   line-height: 1.4;
@@ -765,11 +829,11 @@ pre {
   overflow: scroll;
   /*overflow: hidden;*/
 }
-/* line 27, ../scss/_code.scss */
-pre[data-lang]:after {
+/* line 33, ../scss/_code.scss */
+pre[data-lang]:after, [contenteditable="true"][data-lang]:after {
   content: attr(data-lang);
   background-color: darkgrey;
-  right: 0;
+  right: 8px;
   top: 0;
   position: absolute;
   font-size: .5em;
@@ -779,54 +843,62 @@ pre[data-lang]:after {
   border-radius: 0 0 3px 3px;
 }
 
-/* line 41, ../scss/_code.scss */
+/* line 47, ../scss/_code.scss */
 pre[data-lang="go"] {
   color: #333;
 }
 
-/* line 45, ../scss/_code.scss */
+/* line 51, ../scss/_code.scss */
 code {
   font-size: 95%;
   font-family: 'Source Code Pro', 'Courier New', monospace;
   color: black;
 }
 
+/* line 57, ../scss/_code.scss */
+figure pre {
+  flex-basis: 17.5em;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 /* Pretty print */
-/* line 54, ../scss/_code.scss */
+/* line 67, ../scss/_code.scss */
 .prettyprint .str,
 .prettyprint .atv {
   /* a markup attribute value */
   color: #009f5d;
 }
 
-/* line 58, ../scss/_code.scss */
+/* line 71, ../scss/_code.scss */
 .prettyprint .kwd,
 .prettyprint .tag {
   /* a markup tag name */
   color: #0066cc;
 }
 
-/* line 61, ../scss/_code.scss */
+/* line 74, ../scss/_code.scss */
 .prettyprint .com {
   /* a comment */
   color: #797979;
   font-style: italic;
 }
 
-/* line 65, ../scss/_code.scss */
+/* line 78, ../scss/_code.scss */
 .prettyprint .lit {
   /* a literal value */
   color: #7f0000;
 }
 
-/* line 70, ../scss/_code.scss */
+/* line 83, ../scss/_code.scss */
 .prettyprint .pun,
 .prettyprint .opn,
 .prettyprint .clo {
   color: #515151;
 }
 
-/* line 76, ../scss/_code.scss */
+/* line 89, ../scss/_code.scss */
 .prettyprint .typ,
 .prettyprint .atn,
 .prettyprint .dec,
@@ -835,7 +907,7 @@ code {
   color: #d94d3a;
 }
 
-/* line 79, ../scss/_code.scss */
+/* line 92, ../scss/_code.scss */
 .prettyprint .pln {
   color: #515151;
 }
@@ -1228,6 +1300,7 @@ slide.fill {
 .with-notes.popup slide {
   overflow: visible;
   background: white;
+  background-color: white;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1239,7 +1312,7 @@ slide.fill {
   -o-transform-origin: 0 0;
   transform-origin: 0 0;
 }
-/* line 212, ../scss/default.scss */
+/* line 213, ../scss/default.scss */
 .with-notes.popup slide:not(.backdrop) {
   -webkit-transform: scale(0.6) translate3d(0.5em, 0.5em, 0);
   -moz-transform: scale(0.6) translate3d(0.5em, 0.5em, 0);
@@ -1250,7 +1323,7 @@ slide.fill {
   -moz-box-shadow: 0 0 10px #797979;
   box-shadow: 0 0 10px #797979;
 }
-/* line 217, ../scss/default.scss */
+/* line 218, ../scss/default.scss */
 .with-notes.popup slide.backdrop {
   background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 600, color-stop(0%, #b1dfff), color-stop(100%, #335ebe));
   background-image: -webkit-radial-gradient(50% 50%, #b1dfff 0%, #335ebe 600px);
@@ -1258,7 +1331,7 @@ slide.fill {
   background-image: -o-radial-gradient(50% 50%, #b1dfff 0%, #335ebe 600px);
   background-image: radial-gradient(50% 50%, #b1dfff 0%, #335ebe 600px);
 }
-/* line 223, ../scss/default.scss */
+/* line 224, ../scss/default.scss */
 .with-notes.popup slide.next {
   -webkit-transform: translate3d(157.5vw, 80px, 0) scale(0.35);
   -moz-transform: translate3d(157.5vw, 80px, 0) scale(0.35);
@@ -1267,11 +1340,11 @@ slide.fill {
   transform: translate3d(157.5vw, 80px, 0) scale(0.35);
   opacity: 1 !important;
 }
-/* line 227, ../scss/default.scss */
+/* line 228, ../scss/default.scss */
 .with-notes.popup slide.next .note {
   display: none !important;
 }
-/* line 233, ../scss/default.scss */
+/* line 234, ../scss/default.scss */
 .with-notes.popup .note {
   width: 109%;
   height: -74.375em;
@@ -1290,7 +1363,7 @@ slide.fill {
   -o-transition: opacity 400ms ease-in-out;
   transition: opacity 400ms ease-in-out;
 }
-/* line 244, ../scss/default.scss */
+/* line 245, ../scss/default.scss */
 .with-notes.popup .note > section {
   background: #fff;
   -webkit-border-radius: 5px;
@@ -1309,7 +1382,7 @@ slide.fill {
   overflow: auto;
   padding: 1em;
 }
-/* line 257, ../scss/default.scss */
+/* line 258, ../scss/default.scss */
 .with-notes .note {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -1320,7 +1393,7 @@ slide.fill {
   pointer-events: auto;
 }
 
-/* line 264, ../scss/default.scss */
+/* line 265, ../scss/default.scss */
 .source {
   font-size: .875rem;
   color: darkgrey;
@@ -1329,12 +1402,12 @@ slide.fill {
   left: 1.618vw;
 }
 
-/* line 272, ../scss/default.scss */
+/* line 273, ../scss/default.scss */
 .centered {
   text-align: center;
 }
 
-/* line 276, ../scss/default.scss */
+/* line 277, ../scss/default.scss */
 .reflect {
   -webkit-box-reflect: below 3px -webkit-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
   -moz-box-reflect: below 3px -moz-linear-gradient(rgba(255, 255, 255, 0) 85%, white 150%);
@@ -1343,7 +1416,7 @@ slide.fill {
   box-reflect: below 3px linear-gradient(rgba(255, 255, 255, 0) 85%, #ffffff 150%);
 }
 
-/* line 284, ../scss/default.scss */
+/* line 285, ../scss/default.scss */
 .flexbox {
   display: -webkit-box !important;
   display: -moz-box !important;
@@ -1352,7 +1425,7 @@ slide.fill {
   display: box !important;
 }
 
-/* line 288, ../scss/default.scss */
+/* line 289, ../scss/default.scss */
 .flexbox.vcenter {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -1370,7 +1443,7 @@ slide.fill {
   width: 100%;
 }
 
-/* line 294, ../scss/default.scss */
+/* line 295, ../scss/default.scss */
 .flexbox.vleft {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -1388,7 +1461,7 @@ slide.fill {
   width: 100%;
 }
 
-/* line 300, ../scss/default.scss */
+/* line 301, ../scss/default.scss */
 .flexbox.vright {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -1406,7 +1479,7 @@ slide.fill {
   width: 100%;
 }
 
-/* line 306, ../scss/default.scss */
+/* line 307, ../scss/default.scss */
 .auto-fadein {
   -webkit-transition: opacity 0.6s ease-in;
   -webkit-transition-delay: 1s;
@@ -1417,7 +1490,7 @@ slide.fill {
 }
 
 /* Clickable/tappable areas */
-/* line 312, ../scss/default.scss */
+/* line 313, ../scss/default.scss */
 .slide-area {
   z-index: 1000;
   position: absolute;
@@ -1431,148 +1504,177 @@ slide.fill {
   margin-top: -15.625em;
 }
 
-/* line 329, ../scss/default.scss */
+/* line 330, ../scss/default.scss */
 #prev-slide-area {
   margin-left: -49vw;
 }
 
-/* line 334, ../scss/default.scss */
+/* line 335, ../scss/default.scss */
 #next-slide-area {
   margin-left: 37.5vw;
 }
 
 /* ===== SLIDE CONTENT ===== */
-/* line 343, ../scss/default.scss */
-figure img {
-  height: 40%;
-  width: 40%;
-  -webkit-transform: scale(0.5);
+/* line 344, ../scss/default.scss */
+figure figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-/* line 349, ../scss/default.scss */
-figure figure:hover img {
-  -webkit-transform: scale(1);
+/* line 351, ../scss/default.scss */
+figure.row figcaption {
+  flex-basis: 55%;
+}
+/* line 356, ../scss/default.scss */
+figure img {
+  border: 1px solid rgba(90, 90, 90, 0.3);
+}
+/* line 360, ../scss/default.scss */
+figure.hoverZoom img {
+  -webkit-transform: translate(0, 0) scale(0.5);
+  -webkit-transition: all 0.5s ease-in-out;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition: all 0.5s ease-in-out 0.2s;
+  -o-transition: all 0.5s ease-in-out 0.2s;
+  transition: all 0.5s ease-in-out 0.2s;
+}
+/* line 365, ../scss/default.scss */
+figure.hoverZoom:hover img {
+  -webkit-transform: translate(35%, 10%) scale(1.5);
+}
+/* line 368, ../scss/default.scss */
+figure.hoverZoom:hover figcaption {
+  order: -1;
 }
 
-/* line 354, ../scss/default.scss */
+/* line 374, ../scss/default.scss */
 .flexContent {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   height: 85%;
 }
-/* line 359, ../scss/default.scss */
+/* line 379, ../scss/default.scss */
 .flexContent.stretchColumns {
   align-items: stretch;
 }
-/* line 362, ../scss/default.scss */
+/* line 382, ../scss/default.scss */
 .flexContent .column, .flexContent.column {
   display: flex;
   flex-direction: column;
 }
-/* line 366, ../scss/default.scss */
+/* line 386, ../scss/default.scss */
+.flexContent.wrap, .flexContent .wrap {
+  flex-wrap: wrap;
+}
+/* line 389, ../scss/default.scss */
 .flexContent.column {
   justify-content: flex-start;
 }
-/* line 369, ../scss/default.scss */
+/* line 392, ../scss/default.scss */
 .flexContent .column {
   justify-content: space-between;
 }
-/* line 372, ../scss/default.scss */
+/* line 395, ../scss/default.scss */
 .flexContent.centered {
   width: 80%;
   align-self: center;
 }
-/* line 376, ../scss/default.scss */
+/* line 399, ../scss/default.scss */
 .flexContent .row {
   display: flex;
   flex-direction: row;
 }
-/* line 380, ../scss/default.scss */
+/* line 403, ../scss/default.scss */
 .flexContent .first {
   order: -1;
 }
-/* line 383, ../scss/default.scss */
+/* line 406, ../scss/default.scss */
 .flexContent .last {
   order: 1;
 }
-/* line 386, ../scss/default.scss */
+/* line 409, ../scss/default.scss */
 .flexContent .top {
   align-self: flex-start;
 }
-/* line 389, ../scss/default.scss */
+/* line 412, ../scss/default.scss */
 .flexContent .bottom {
   align-self: flex-end;
 }
-/* line 392, ../scss/default.scss */
+/* line 415, ../scss/default.scss */
 .flexContent iframe {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 16rem;
 }
-/* line 397, ../scss/default.scss */
+/* line 420, ../scss/default.scss */
 .flexContent figure {
   display: flex;
 }
-/* line 399, ../scss/default.scss */
+/* line 422, ../scss/default.scss */
 .flexContent figure figcaption {
   flex-basis: 38.2%;
   margin: 0 0 0 1.618em;
 }
 
-/* line 406, ../scss/default.scss */
+/* line 429, ../scss/default.scss */
 .calloutGroup li, .calloutGroup p {
   flex-grow: 1;
   flex-basis: 25%;
   border-radius: .25em;
 }
-/* line 411, ../scss/default.scss */
+/* line 434, ../scss/default.scss */
 .calloutGroup .build-current {
   background-color: aliceblue;
   flex-basis: 25%;
 }
-/* line 415, ../scss/default.scss */
+/* line 438, ../scss/default.scss */
 .calloutGroup .to-build {
   flex-basis: 0%;
 }
 
-/* line 419, ../scss/default.scss */
+/* line 442, ../scss/default.scss */
 .flexList {
   display: flex;
   flex-basis: 61.8%;
   align-self: flex-start;
-  min-width: 61.8% dt, dd;
-  min-width-display: flex;
-  min-width-flex-direction: row;
-  min-width-margin-bottom: .618em;
+  min-width: 61.8%;
 }
-/* line 429, ../scss/default.scss */
+/* line 447, ../scss/default.scss */
+.flexList dt, .flexList dd {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: .618em;
+}
+/* line 452, ../scss/default.scss */
 .flexList dt {
   align-self: baseline;
   flex-basis: 33%;
 }
-/* line 433, ../scss/default.scss */
+/* line 456, ../scss/default.scss */
 .flexList dd {
   align-self: baseline;
   flex-basis: 45%;
 }
-/* line 438, ../scss/default.scss */
+/* line 461, ../scss/default.scss */
 .flexList.centeredItems li {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-/* line 444, ../scss/default.scss */
+/* line 467, ../scss/default.scss */
 .flexList li {
   padding: .618em;
   margin: .618em;
 }
-/* line 448, ../scss/default.scss */
+/* line 471, ../scss/default.scss */
 .flexList.column {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-/* line 454, ../scss/default.scss */
+/* line 477, ../scss/default.scss */
 .flexList.row {
   flex-direction: row;
   width: 98%;
@@ -1580,48 +1682,48 @@ figure figure:hover img {
   margin-left: 0;
 }
 
-/* line 462, ../scss/default.scss */
+/* line 485, ../scss/default.scss */
 .logoslide img {
   width: 383px;
   height: 92px;
 }
 
-/* line 468, ../scss/default.scss */
+/* line 491, ../scss/default.scss */
 .segue {
   padding: 1.618vw 3.236vw;
 }
-/* line 471, ../scss/default.scss */
+/* line 494, ../scss/default.scss */
 .segue h2 {
   color: #e6e6e6;
   font-size: 3.75em;
 }
-/* line 475, ../scss/default.scss */
+/* line 498, ../scss/default.scss */
 .segue h3 {
   color: #e6e6e6;
   line-height: 2.8;
 }
-/* line 479, ../scss/default.scss */
+/* line 502, ../scss/default.scss */
 .segue hgroup {
   position: absolute;
   bottom: 225px;
 }
 
-/* line 485, ../scss/default.scss */
+/* line 508, ../scss/default.scss */
 .thank-you-slide {
   background: #335ebe !important;
   color: white;
 }
-/* line 489, ../scss/default.scss */
+/* line 512, ../scss/default.scss */
 .thank-you-slide h2 {
   font-size: 3.75em;
   color: inherit;
 }
-/* line 494, ../scss/default.scss */
+/* line 517, ../scss/default.scss */
 .thank-you-slide article > p {
   margin-top: 2em;
   font-size: 1.25em;
 }
-/* line 499, ../scss/default.scss */
+/* line 522, ../scss/default.scss */
 .thank-you-slide > p {
   position: absolute;
   bottom: 3.236em;
@@ -1629,7 +1731,7 @@ figure figure:hover img {
   line-height: 1.3;
 }
 
-/* line 507, ../scss/default.scss */
+/* line 530, ../scss/default.scss */
 aside.gdbar {
   height: 97px;
   width: 215px;
@@ -1653,7 +1755,7 @@ aside.gdbar {
   transition: all 0.5s ease-out 0.5s;
   /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 }
-/* line 518, ../scss/default.scss */
+/* line 541, ../scss/default.scss */
 aside.gdbar.right {
   right: 0;
   left: -moz-initial;
@@ -1666,7 +1768,7 @@ aside.gdbar.right {
   -o-transform: rotateZ(180deg);
   transform: rotateZ(180deg);
 }
-/* line 525, ../scss/default.scss */
+/* line 548, ../scss/default.scss */
 aside.gdbar.right img {
   -webkit-transform: rotateZ(180deg);
   -moz-transform: rotateZ(180deg);
@@ -1674,13 +1776,13 @@ aside.gdbar.right img {
   -o-transform: rotateZ(180deg);
   transform: rotateZ(180deg);
 }
-/* line 530, ../scss/default.scss */
+/* line 553, ../scss/default.scss */
 aside.gdbar.bottom {
   top: -moz-initial;
   top: initial;
   bottom: 1.618vw;
 }
-/* line 536, ../scss/default.scss */
+/* line 559, ../scss/default.scss */
 aside.gdbar img {
   width: 85px;
   height: 85px;
@@ -1689,18 +1791,18 @@ aside.gdbar img {
   margin: 8px 15px;
 }
 
-/* line 547, ../scss/default.scss */
+/* line 570, ../scss/default.scss */
 .title-slide hgroup {
   bottom: 1em;
 }
-/* line 549, ../scss/default.scss */
+/* line 572, ../scss/default.scss */
 .title-slide hgroup h1 {
   font-size: 4em;
   line-height: 1.618;
   letter-spacing: -3px;
   color: #515151;
 }
-/* line 556, ../scss/default.scss */
+/* line 579, ../scss/default.scss */
 .title-slide hgroup h2 {
   position: relative;
   top: -.618em;
@@ -1708,18 +1810,18 @@ aside.gdbar img {
   color: darkgrey;
   font-weight: inherit;
 }
-/* line 564, ../scss/default.scss */
+/* line 587, ../scss/default.scss */
 .title-slide hgroup p {
   font-size: 1.25em;
   color: #797979;
   line-height: 1.618;
 }
 
-/* line 572, ../scss/default.scss */
+/* line 595, ../scss/default.scss */
 .quote {
   color: #e6e6e6;
 }
-/* line 575, ../scss/default.scss */
+/* line 598, ../scss/default.scss */
 .quote .author {
   font-size: 1.5em;
   position: absolute;
@@ -1727,22 +1829,22 @@ aside.gdbar img {
   line-height: 1.4;
 }
 
-/* line 584, ../scss/default.scss */
+/* line 607, ../scss/default.scss */
 [data-config-contact] a {
   color: white;
   border-bottom: none;
 }
-/* line 588, ../scss/default.scss */
+/* line 611, ../scss/default.scss */
 [data-config-contact] span {
   width: 115px;
   display: inline-block;
 }
 
-/* line 597, ../scss/default.scss */
+/* line 620, ../scss/default.scss */
 .overview.popup .note {
   display: none !important;
 }
-/* line 603, ../scss/default.scss */
+/* line 626, ../scss/default.scss */
 .overview slides slide {
   display: block;
   cursor: pointer;
@@ -1755,20 +1857,20 @@ aside.gdbar img {
   background: linear-gradient(#ffffff, #ffffff 85%, #e6e6e6);
   background-color: white;
 }
-/* line 604, ../scss/default.scss */
+/* line 627, ../scss/default.scss */
 .overview slides slide.backdrop {
   display: none !important;
 }
-/* line 619, ../scss/default.scss */
+/* line 642, ../scss/default.scss */
 .overview slides slide.far-past, .overview slides slide.past, .overview slides slide.next, .overview slides slide.far-next, .overview slides slide.far-past {
   opacity: 0.5;
   display: block;
 }
-/* line 624, ../scss/default.scss */
+/* line 647, ../scss/default.scss */
 .overview slides slide.current {
   opacity: 1;
 }
-/* line 630, ../scss/default.scss */
+/* line 653, ../scss/default.scss */
 .overview .slide-area {
   display: none;
 }
