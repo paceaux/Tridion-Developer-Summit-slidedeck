@@ -48,21 +48,33 @@ table {
   border-collapse: -moz-initial;
   border-collapse: initial;
   border-spacing: 2px;
-  border-bottom: 1px solid $gray-3;
-
   caption {
     font-size: .85em;
     font-style: italic;
+    padding: .618em;
   }
   tr > td:first-child, th {
     font-weight: 600;
     color: $gray-4;
   }
-
-  tr:nth-child(odd) {
-    background-color: $gray-1;
+  thead{
+    border-top: 1px solid $gray-1;
+    border-left: 1px solid $gray-1;
+    border-right: 1px solid $gray-1;
+    border-radius: 3px 3px 0 0;
+    tr {
+      &:first-child {
+        border-bottom: 1px solid $gray-1;
+      }
+    }
   }
-
+  tbody{
+    border: 1px solid $gray-3;
+    border-radius: 0 0 3px 3px;
+    tr:nth-child(odd) {
+      background-color: $gray-1;
+    }
+  }
   th {
     font-size: 1.125em;
     font-weight: bold
