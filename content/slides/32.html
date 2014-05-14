@@ -3,31 +3,31 @@
       <h3>A Typical Component Template</h3>
     </hgroup>
     <article >
-      <p>here's info about assets</p>
       <pre class="prettyprint" data-lang="razor">
-      	<b>&lt;!--put stuff in for the embed converter and then highlight it --></b>
-
-@helper videoEmbedUrl(string url){
-    <b>return url.Replace("Distributions/","Distributions/embed/");</b>
-}      	
-      	&lt;figure class="video video--@(Fields.embedType)">
-      		@if(Fields.header != null) {
-      			&lt;h1 class="video__header">@Fields.header&lt;/h1>
-      		}
-      		&lt;div class="video__player player">
-	      		@if(Fields.embedType != "iframe") {
-	      			&lt;iframe class="player__iframe" src="@Fields.url">&lt;/iframe>
-
-	      		} else {
-	      			&lt;script type="text/javascript" src="@videoEmbedUrl(Fields.url)">&lt;/script>
-	      		}
-	      	&lt;/div>
-      		@if(Fields.description != null){
-      		&lt;figcaption class="video__description">
-      			@Fields.description
-      		&lt;/figcaption>
-      		}
-      	&lt;/figure>
+<b>@helper videoEmbedUrl(string url){
+    return url.Replace("Distributions/","Distributions/embed/");
+} 
+</b>     	
+&lt;figure class="video video--@(Fields.embedType)">
+@if(Fields.header != null){
+	&lt;h1 class="video__header">
+  @Fields.header
+  &lt;/h1>
+}
+&lt;div class="video__player player">
+@if(Fields.embedType != "iframe"){
+	&lt;iframe class="player__iframe" src="@Fields.url">
+  &lt;/iframe>
+} else {
+	&lt;script type="text/javascript" src="@videoEmbedUrl(Fields.url)">&lt;/script>
+}
+&lt;/div>
+@if(Fields.description != null){
+ &lt;figcaption class="video__description">
+	@Fields.description
+ &lt;/figcaption>
+}
+&lt;/figure>
       </pre>
       <footer>
       	<h3>Pro Tip:</h3>

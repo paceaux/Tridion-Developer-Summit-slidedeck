@@ -2,22 +2,30 @@
       <h2>Putting Videos on a Web Page</h2>
       <h3>JavaScript | Example</h3>
     </hgroup>
-    <article >
-      <p>Media Manager provides a JavaScript snippet that an end-user can use, a bit like YouTube.</p>
+    <article>
+<style type="text/css" scoped>
+#demo1 {
+	height: 350px;
+}
+#demo1 div{
+	width: 500px ;
+	height: 350px ;
+}
+</style>
+<figure class="flexContent row" id="demo1">
 
-<figure>
-<script type="text/javascript" language="javascript" data-src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=DCF7FD8E-E793-4690-B280-9E5493C60B51">
+<script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=DCF7FD8E-E793-4690-B280-9E5493C60B51&trgt=self">
 </script>
-
-<figcaption>
-	<h3>Trust me on this:</h3>
-	<ul>
-		<li>Make sure you have jQuery on the page already</li>
-		<li>You don't want to put more than one script on the page</li>
-		<li>Because of some very odd z-indexing, you can't put an embedded video in a modal window(it'll close the window)</li>
-
-	 </ul>
-</figcaption>
+<div id="self">
+</div>
+	<figcaption>
+		<h3>Trust me on this:</h3>
+		<ul>
+			<li>Make sure you have jQuery on the page already</li>
+			<li>You don't want to put more than one script on the page</li>
+			<li>Because of some very odd z-indexing, you can't put an embedded video in a modal window(it'll close the window)</li>
+		 </ul>
+	</figcaption>
 </figure>
 
 </article>

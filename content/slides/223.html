@@ -1,0 +1,121 @@
+<hgroup>
+  <h2>Putting Videos on a Web Page</h2>
+  <h3>JavaScript | Example | Responsive</h3>
+</hgroup>
+<article>
+	<style type="text/css" scoped>
+		.demo .container {
+		    width: 16em;
+		}
+		.demo .wrap {
+		    position:relative;
+		    overflow: hidden;
+		    display: block;
+		    height: 0;
+		    padding-bottom: 56.25%;
+		    border: 2px solid black;
+		    background: gray;
+		}
+	</style>
+	<script type="text/javascript" class="prettyprint">
+var mmresize;
+mmresize = {
+    init: function () {
+        var _this = mmresize;
+        _this.functions.resizeProjekktor(); //we don't want to set projekktor dimensions to "inherit" every time
+        _this.functions.responsifyVideo();// resize the video
+    },
+    functions: {
+        resizeProjekktor: function () {
+            var $projekktor = $('.projekktor');
+            $projekktor.css({
+                width: 'inherit',
+                height: 'inherit'
+            });        
+        },
+        responsifyVideo: function (width) {
+            var $projekktor = $('.projekktor'),
+                $sdlmm = $projekktor.parent(),
+                $container = $sdlmm.parent().parent();
+            if (width) $container.width(width);
+            $sdlmm.css({
+                width: $container.outerWidth(),
+                height: $container.height()
+            });
+        }
+    }
+};
+/* Wait for jQuery to load on the page */
+$(document).ready(function () {
+    /*first event: when mmplayerready fires */
+    $(document).on('MMPLAYERREADY', function (e) {
+        mmresize.init();
+    });
+    /*second event, the user plays with the slider */
+    $('#resizer').on('change', function (e) {
+        var val = e.target.value,
+            computeVal = val + 'em';
+        mmresize.functions.responsifyVideo(computeVal); 
+    });
+});
+	</script>
+
+<figure class="flexContent row">
+	<div class="demo">
+		<div class="resizer">
+			<label for="resizer">Change the width</label>
+			<input type="range" id="resizer" min="4" max="30" />
+		</div>
+		<div class="container">
+		    <div class="wrap">
+		        <script type="text/javascript" language="javascript" src="http://nationwide.dist.sdlmedia.com/Distributions/embed/?o=1F2C97BE-DE64-467C-A6D1-3A5DCFE38215"></script>
+		    </div>
+		</div>
+	</div>
+	<figcaption>
+	<pre type="text/javascript" class="prettyprint" data-lang="javascript">
+var mmresize;
+mmresize = {
+    init: function () {
+        var _this = mmresize;
+        _this.functions.resizeProjekktor(); //we don't want to set projekktor dimensions to "inherit" every time
+        _this.functions.responsifyVideo();// resize the video
+    },
+    functions: {
+        resizeProjekktor: function () {
+            var $projekktor = $('.projekktor');
+            $projekktor.css({
+                width: 'inherit',
+                height: 'inherit'
+            });        
+        },
+        responsifyVideo: function (width) {
+            var $projekktor = $('.projekktor'),
+                $sdlmm = $projekktor.parent(),
+                $container = $sdlmm.parent().parent();
+            if (width) $container.width(width);
+            $sdlmm.css({
+                width: $container.outerWidth(),
+                height: $container.height()
+            });
+        }
+    }
+};
+/* Wait for jQuery to load on the page */
+$(document).ready(function () {
+    /*first event: when mmplayerready fires */
+    $(document).on('MMPLAYERREADY', function (e) {
+        mmresize.init();
+    });
+    /*second event, the user plays with the slider */
+    $('#resizer').on('change', function (e) {
+        var val = e.target.value,
+            computeVal = val + 'em';
+        mmresize.functions.responsifyVideo(computeVal); 
+    });
+});
+</pre>		
+	</figcaption>
+</figure>	
+
+</article>

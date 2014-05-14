@@ -6,11 +6,11 @@
       <p>Ajax is the undocumented approach. It involves writing some jQuery that calls the video.</p>
       <p>Use this if:</p>
       <ul>    	
+      <li>You have jQuery on the page already, and it gets called in the <code>&lt;head></code></li>
 
+      <li>You want to create functionality that allows the end-user to change videos</li>
 
-      <li>you want to create functionality that allows the end-user to change videos</li>
-
-      <li>you want to create functionality that allows the end user to <em>control</em> the video </li>
+      <li>You want to create functionality that allows the end user to <em>control</em> the video </li>
 
       <li>You want to edit the presentation of the video outside of Media Manager </li>
   </ul>
@@ -18,10 +18,6 @@
   	$.getScript('http://nationwide.dist.sdlmedia.com/Distributions/
   	?o=<b>DCF7FD8E-E793-4690-B280-9E5493C60B51</b>')
   </pre>
+<h3>But, There's a second approach&hellip;</h3>
 
-  <p>there's a second approach which allows you to set the target of the element</p>
-    <pre class="prettyprint" data-lang="javascript">
-  	$.getScript('http://nationwide.dist.sdlmedia.com/Distributions/
-  	?o=DCF7FD8E-E793-4690-B280-9E5493C60B51<b>&trgt=someAwesomeDiv</b>')
-  </pre>
     </article>
