@@ -12,6 +12,32 @@ dl.smaller, ul.smaller {
     font-family: monospace;
   }
 }
+.big {
+  p, ul, dl {
+    font-size: 1.4em;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+  h3{
+    font-size: 1.75rem
+  }
+  td, th {
+    font-size: 1.5em;
+  }
+  pre {
+    font-size: .95em;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  q {
+    font-size: 50px;
+    line-height: 60px;
+
+    &:before, &:after {
+      font-size: 60px;
+    }
+  }
+}
 .small {
   p, ul, dl {
     font-size: .8em;
