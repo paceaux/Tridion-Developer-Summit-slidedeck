@@ -46,7 +46,7 @@
                 <ul class="build calloutGroup flexList row centeredItems">
                     <li>Introduce Media Manager</li>
                     <li>Put Videos on a web page</li>
-                    <li>Put Videos in Tridion</li>
+                    <li>Manage Videos in Tridion</li>
                     <li>Hack, Crack, and trick out Media Manager</li>
                 </ul>
                 <footer class="build">
@@ -87,7 +87,6 @@
                     <ul class="build">
                         <li>jQuery</li>
                         <li>jQuery Plugins</li>
-                        <li>Fun with Ajax</li>
                         <li>Playing with the projekktor API</li>
                     </ul>
                 </div>
@@ -410,17 +409,6 @@
                         If you haven't published a distribution, then you won't get a live URL.
                     </figcaption>
                 </figure>
-            </article>
-        </slide>
-        <slide data-slide-src="content/slides/16.html">
-            <hgroup>
-                <h2>Starting in Media Manager</h2>
-                <h3>Distributions</h3>
-            </hgroup>
-            <article>
-                <p>The distribution is where the magic happens!</p>
-
-
             </article>
         </slide>
         <slide data-slide-src="content/slides/20.html">
@@ -849,7 +837,7 @@ mediaManagerMagic = {
             </hgroup>
             <article>
                 <p>You have a handful of jQuery events that propogate up into the container. You can listen to those events and respond accordingly.</p>
-                <table>
+                <table class="medium">
                     <thead>
                         <tr>
                             <th>Event</th>
@@ -903,11 +891,21 @@ mediaManagerMagic = {
 
                 <p>Create your own Media Manager namespace, and initiate it inside of MMPLAYERREADY</p>
                 </div>
-                <pre class="prettyprint" data-lang="javascript">
-<b>$(document).on('MMPLAYERREADY', function (e) {
-        mediaManagerMagic.init();
-    });
-</b>
+                <h3>Reset a video when it's ended</h3>
+                <pre class="prettyprint medium" data-lang="javascript">
+$(document).on('MMPLAYERREADY', function (e) {
+  $(player).on("<b>show-layer-endstate</b>", function (e) {
+      setTimeout(<b>helpers.resetVideo()</b>,100);
+  });    
+});
+</pre>
+                <h3>Make a video autoplay (without the outlet) </h3>
+                <pre class="prettyprint medium" data-lang="javascript">
+$(document).on('MMPLAYERREADY', function (e) {
+  $(player).on("<b>player-ready</b>", function (e) {
+      <b>helpers.playVideo()</b>
+  });    
+});
 </pre>
 
             </article>
@@ -918,113 +916,125 @@ mediaManagerMagic = {
                 <h3>jQuery Plugins</h3>
             </hgroup>
             <article>
-                <div class="build">
-                    <p>If you need to be able to switch between an iframed or an Ajaxed approach, <strong>use a jQuery plugin!</strong>
-                    </p>
+                <p>If you need to be able to switch between an iframed or an Ajaxed approach, <strong>use a jQuery plugin!</strong>
+                </p>
+                <br />
+                <p>Before you build a plugin, use what's out there, and make sure that it works for the content author&mdash; not just you!</p>
+                <br />
+                <p>Be sure that your plugins will work with <em>SDL's</em> version of jQuery</p>
 
-                    <p>Before you build a plugin, use what's out there</p>
-
+                <div class="build small">
                     <p>
                         <code>&lt;!--insert shameless self promotion--></code>
-                        <br />There is a Media Manager plugin on Github</p>
+                    </p>
+                    <p>
+                        <a href="https://github.com/paceaux/Media-Manager-Plugins-for-Tridion">There is a Media Manager plugin on Github</a>
+                    </p>
                 </div>
-                <footer>
+                <footer class="build small">
                     <h3>Pro Tips</h3>
-                    <ul class="build flexList calloutGroup centeredItems">
+                    <ul class="build flexList row calloutGroup centeredItems">
                         <li>Use a plugin that doesn't rely on JavaScript to set parameters</li>
                         <li><code>data-*</code> attributes are your friend</li>
                     </ul>
                 </footer>
             </article>
         </slide>
+        <slide data-slide-src="content/slides/421.html">
+            <hgroup>
+                <h2>Tricks and Tools</h2>
+                <h3>jQuery Plugins | Media Manager Plugin | Shameless promotion</h3>
+            </hgroup>
+            <article>
+                <style type="text/css">
+                    #iframedemo3 {
+                        height: 500px;
+                        width: 100%;
+                    }
+                </style>
+                <iframe id="iframedemo3" width="100%" height="300" src="http://jsfiddle.net/Paceaux/ew8nr/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            </article>
+        </slide>
         <slide data-slide-src="content/slides/43.html">
             <hgroup>
                 <h2>Tricks and Tools</h2>
-                <h3>Fun with Ajax</h3>
+                <h3>Projekktor API</h3>
             </hgroup>
             <article>
-                <p>here's info about assets</p>
-            </article>
-        </slide>
-        <slide data-slide-src="content/slides/44.html">
-            <h2>Tricks and Tools</h2>
-            <h3>Playing with the projekktor API</h3>
-            <p>here's info about assets</p>
-            </article>
-            </hgroup>
-            <article>
-                <hgroup>
-        </slide>
-        <slide data-slide-src="content/slides/94.html">
-            <hgroup>
-                <h2>Code Slide (with Subtitle Placeholder)</h2>
-                <h3>Subtitle Placeholder</h3>
-            </hgroup>
-            <article>
-                <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-                <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
+                <h3>I'm sorry, the what?</h3>
+
+                <p>Media Manager actually uses a third party API for putting videos on a page. If you want to understand the core of media manager, this is it.</p>
+
+                <p>Check out <a href="http://www.projekktor.com/">http://www.projekktor.com/</a> for details on how videos actually get put on the page. It's a pretty complex JavaScript library.</p>
+
+                <p><a href="http://www.nationwide.com/who-we-are.jsp">Nationwide actually makes use of some functionality</a> in the Projekktor API to do some super serious hackery:</p>
+                <pre class="prettprint" data-lang="javascript">
+
+//Reset the video and play again
+            restartPlayer: function () {
+                var player = projekktors[0]; //target the video directly, since it's in an array
+                player.reset();
+                player.setPlay();
+            },
+//fullscreen shenanigans
+            openFullscreen: function () {
+                var player = projekktors[0];
+                player.setFullscreen();
+                $player.removeClass("js-fullscreen");
+            },
+            closeFullscreen: function() {
+                var player = projekktors[0];
+                //use the jQuery method, because it's easier in this case
+                $player.trigger("close-fullscreen");
+                $player.removeClass("js-fullscreen");              
+            },
+//Play at a specific point in the video
+            playPosition: function (n) {
+                var player = projekktors[0];
+                player.setPlayhead(n);
+                return;
+            },
+//create a play function that can accept a position as an argument
+            playVideo: function (n) {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = $(_this.data.player);
+                if (n) {
+                    _this.helpers.playPosition(n);
+                }
+                $player.trigger("play");
+            },
+            pauseVideo: function () {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = (_this.data.player);
+                $player.trigger("pause");
+            },
+            stopVideo: function () {
+                var player = projekktors[0];
+                player.setStop();
+            },
+//reset the video
+            resetVideo: function () {
+                var player = projekktors[0];
+                player.reset();
+            },
+            restartVideo: function () {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = $(_this.data.player);
+                $player.trigger("restart-asset")
+            },
+//detroy the player               
+            exitVideo: function () {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = $(_this.data.player);
+                $player.trigger("exit");
+                _this.data.userIntent.watch = false;
+            },
+            setVolume: function (vol) {
+                var player = projekktors[0];
+                player.setVolume(vol);
+            },
+        },
 </pre>
-            </article>
-        </slide>
-        <slide data-slide-src="content/slides/95.html">
-            <hgroup>
-                <h2>Code Slide (Smaller Font)</h2>
-            </hgroup>
-            <article class="smaller">
-                <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-                <pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-                <pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
-            </article>
-        </slide>
-        <slide data-slide-src="content/slides/96.html">
-            <section>
-                <ul>
-                    <li>Point I wanted to make #1</li>
-                    <li>Point I wanted to make #2</li>
-                    <li>Point I wanted to make #3</li>
-                    <li>Example <a href="#">link</a> in notes.</li>
-                </ul>
-                <p><b>Remember to say this tag line!</b>
-                </p>
-            </section>
-            </aside>
-            <hgroup>
-                <h2>Slide with Speaker Notes</h2>
-            </hgroup>
-            <article>
-                <p>Press 'p' to toggle speaker notes.</p>
             </article>
         </slide>
         <slide class="thank-you-slide segue nobackground">
@@ -1032,8 +1042,8 @@ function helloWorld(world) {
                 <img src="images/tds-logo-medium.png">
             </aside>
             <article class="flexbox vleft auto-fadein">
-                <h2>&lt;Thank You!&gt;</h2>
-                <p>Important contact information goes here.</p>
+                <code>&lt;!--Insert sincere gratitude --></code>
+                <h2>Thank You!</h2>
             </article>
             <p class="auto-fadein" data-config-contact>
                 <!-- populated from slide_config.json -->

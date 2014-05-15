@@ -1,7 +1,80 @@
     <hgroup>
       <h2>Tricks and Tools</h2>
-      <h3>Fun with Ajax</h3>
+      <h3>Projekktor API</h3>
     </hgroup>
-    <article >
-      <p>here's info about assets</p>
+    <article>
+<h3>I'm sorry, the what?</h3>
+
+<p>Media Manager actually uses a third party API for putting videos on a page. If you want to understand the core of media manager, this is it.</p>
+
+<p>Check out <a href="http://www.projekktor.com/">http://www.projekktor.com/</a> for details on how videos actually get put on the page. It's a pretty complex JavaScript library. </p>
+
+<p><a href="http://www.nationwide.com/who-we-are.jsp">Nationwide actually makes use of some functionality</a> in the Projekktor API to do some super serious hackery:</p>
+<pre class="prettprint" data-lang="javascript">
+
+//Reset the video and play again
+            restartPlayer: function () {
+                var player = projekktors[0]; //target the video directly, since it's in an array
+                player.reset();
+                player.setPlay();
+            },
+//fullscreen shenanigans
+            openFullscreen: function () {
+                var player = projekktors[0];
+                player.setFullscreen();
+                $player.removeClass("js-fullscreen");
+            },
+            closeFullscreen: function() {
+                var player = projekktors[0];
+                //use the jQuery method, because it's easier in this case
+                $player.trigger("close-fullscreen");
+                $player.removeClass("js-fullscreen");              
+            },
+//Play at a specific point in the video
+            playPosition: function (n) {
+                var player = projekktors[0];
+                player.setPlayhead(n);
+                return;
+            },
+//create a play function that can accept a position as an argument
+            playVideo: function (n) {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = $(_this.data.player);
+                if (n) {
+                    _this.helpers.playPosition(n);
+                }
+                $player.trigger("play");
+            },
+            pauseVideo: function () {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = (_this.data.player);
+                $player.trigger("pause");
+            },
+            stopVideo: function () {
+                var player = projekktors[0];
+                player.setStop();
+            },
+//reset the video
+            resetVideo: function () {
+                var player = projekktors[0];
+                player.reset();
+            },
+            restartVideo: function () {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = $(_this.data.player);
+                $player.trigger("restart-asset")
+            },
+//detroy the player               
+            exitVideo: function () {
+                var _this = nwdotcom.mediaManagerHandler,
+                    $player = $(_this.data.player);
+                $player.trigger("exit");
+                _this.data.userIntent.watch = false;
+            },
+            setVolume: function (vol) {
+                var player = projekktors[0];
+                player.setVolume(vol);
+            },
+        },
+</pre>
     </article>

@@ -7,11 +7,21 @@
 
 <p>Create your own Media Manager namespace, and initiate it inside of MMPLAYERREADY</p>
   </div>
-<pre class="prettyprint" data-lang="javascript">
-<b>$(document).on('MMPLAYERREADY', function (e) {
-        mediaManagerMagic.init();
-    });
-</b>
+<h3>Reset a video when it's ended</h3>
+<pre class="prettyprint medium" data-lang="javascript">
+$(document).on('MMPLAYERREADY', function (e) {
+  $(player).on("<b>show-layer-endstate</b>", function (e) {
+      setTimeout(<b>helpers.resetVideo()</b>,100);
+  });    
+});
+</pre>
+<h3>Make a video autoplay (without the outlet) </h3>
+<pre class="prettyprint medium" data-lang="javascript">
+$(document).on('MMPLAYERREADY', function (e) {
+  $(player).on("<b>player-ready</b>", function (e) {
+      <b>helpers.playVideo()</b>
+  });    
+});
 </pre>
 
     </article>
