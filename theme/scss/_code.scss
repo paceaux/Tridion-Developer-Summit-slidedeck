@@ -8,14 +8,21 @@
     opacity: 1;
   }
 }
-[contenteditable="true"] {
+[contenteditable="true"], [contenteditable] {
   display: block;
+  resize: both;
+  min-height: 4em;
+  border: 1px dashed transparent;
+  &:focus, &:active{
+    outline: none;
+    border: 1px dashed $gray-1;
+  }
 }
 pre{
   max-height: 12em;
   overflow-y: scroll;
 }
-pre, [contenteditable="true"] {
+pre, [contenteditable="true"], [contenteditable] {
   font-family: 'Source Code Pro', 'Courier New', monospace;
   font-size: 1.25em;
   line-height: 1.4;

@@ -801,18 +801,26 @@ dl dd {
 }
 
 /* line 11, ../scss/_code.scss */
-[contenteditable="true"] {
+[contenteditable="true"], [contenteditable] {
   display: block;
+  resize: both;
+  min-height: 4em;
+  border: 1px dashed transparent;
+}
+/* line 16, ../scss/_code.scss */
+[contenteditable="true"]:focus, [contenteditable="true"]:active, [contenteditable]:focus, [contenteditable]:active {
+  outline: none;
+  border: 1px dashed #e6e6e6;
 }
 
-/* line 14, ../scss/_code.scss */
+/* line 21, ../scss/_code.scss */
 pre {
   max-height: 12em;
   overflow-y: scroll;
 }
 
-/* line 18, ../scss/_code.scss */
-pre, [contenteditable="true"] {
+/* line 25, ../scss/_code.scss */
+pre, [contenteditable="true"], [contenteditable] {
   font-family: 'Source Code Pro', 'Courier New', monospace;
   font-size: 1.25em;
   line-height: 1.4;
@@ -829,8 +837,8 @@ pre, [contenteditable="true"] {
   overflow: scroll;
   /*overflow: hidden;*/
 }
-/* line 33, ../scss/_code.scss */
-pre[data-lang]:after, [contenteditable="true"][data-lang]:after {
+/* line 40, ../scss/_code.scss */
+pre[data-lang]:after, [contenteditable="true"][data-lang]:after, [contenteditable][data-lang]:after {
   content: attr(data-lang);
   background-color: darkgrey;
   right: 8px;
@@ -843,19 +851,19 @@ pre[data-lang]:after, [contenteditable="true"][data-lang]:after {
   border-radius: 0 0 3px 3px;
 }
 
-/* line 47, ../scss/_code.scss */
+/* line 54, ../scss/_code.scss */
 pre[data-lang="go"] {
   color: #333;
 }
 
-/* line 51, ../scss/_code.scss */
+/* line 58, ../scss/_code.scss */
 code {
   font-size: 95%;
   font-family: 'Source Code Pro', 'Courier New', monospace;
   color: black;
 }
 
-/* line 57, ../scss/_code.scss */
+/* line 64, ../scss/_code.scss */
 figure pre {
   flex-basis: 17.5em;
   height: 100%;
@@ -864,41 +872,41 @@ figure pre {
 }
 
 /* Pretty print */
-/* line 67, ../scss/_code.scss */
+/* line 74, ../scss/_code.scss */
 .prettyprint .str,
 .prettyprint .atv {
   /* a markup attribute value */
   color: #009f5d;
 }
 
-/* line 71, ../scss/_code.scss */
+/* line 78, ../scss/_code.scss */
 .prettyprint .kwd,
 .prettyprint .tag {
   /* a markup tag name */
   color: #0066cc;
 }
 
-/* line 74, ../scss/_code.scss */
+/* line 81, ../scss/_code.scss */
 .prettyprint .com {
   /* a comment */
   color: #797979;
   font-style: italic;
 }
 
-/* line 78, ../scss/_code.scss */
+/* line 85, ../scss/_code.scss */
 .prettyprint .lit {
   /* a literal value */
   color: #7f0000;
 }
 
-/* line 83, ../scss/_code.scss */
+/* line 90, ../scss/_code.scss */
 .prettyprint .pun,
 .prettyprint .opn,
 .prettyprint .clo {
   color: #515151;
 }
 
-/* line 89, ../scss/_code.scss */
+/* line 96, ../scss/_code.scss */
 .prettyprint .typ,
 .prettyprint .atn,
 .prettyprint .dec,
@@ -907,7 +915,7 @@ figure pre {
   color: #d94d3a;
 }
 
-/* line 92, ../scss/_code.scss */
+/* line 99, ../scss/_code.scss */
 .prettyprint .pln {
   color: #515151;
 }
